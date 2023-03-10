@@ -1,0 +1,42 @@
+/* ESTUDIOS */
+
+.container_est {
+  width: 100%;
+  margin: 40px auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #0f0f0f;
+}
+
+.container_edu {
+  width: 50%;
+  min-width: 360px;
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.box_edu_1 {
+  width: 20%;
+}
+
+.box_edu_1 img {
+  width: 160px;
+}
+
+.box_edu_2 {
+  width: 80%;
+}
+
+.box_edu_2 h3 {
+  color: #90ffff;
+}
+
+@media (max-width: 1300px) {
+  .box_edu_1 img {
+      display: none;
+  }
+}

@@ -1,0 +1,39 @@
+.container_about {
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  background-color: #101010;
+}
+
+.container_about h2 {
+  color: #00ffff;
+}
+
+.container_stats {
+  padding: 20px;
+  margin: 10px;
+  display: grid;
+  gap: 10px 20px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 460px), 1fr));
+  background-color: #101010;
+}
+
+.stat {
+  background-color: #101010;
+  color: #202020;
+  font-size: 16px;
+  font-weight: 500;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.full_stat {
+  width: 100%;
+  background-color: #202020;
+}
+
+.percentage {
+  padding: 4px;
+  background-color: #00ffff;
+}

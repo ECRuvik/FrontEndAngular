@@ -1,0 +1,52 @@
+.container_exp {
+  width: 45%;
+  margin: auto;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_exp h3 {
+  margin: auto;
+  padding: 10px;
+  font-size: 32px;
+  text-align: center;
+  color: #00ffff;
+  background-color: #0f0f0f;
+}
+
+.box_exp {
+  width: 100%;
+  margin: 16px auto;
+  padding: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0f0f0f;
+}
+
+.exp_img {
+  width: 80px;
+  margin: 20px;
+}
+
+.exp_img img {
+  width: 80px;
+}
+
+.exp_desc {
+  width: 100%;
+  margin: 50px;
+}
+
+.exp_desc h4 {
+  color: #90ffff;
+}
+
+@media (max-width: 500px) {
+  .box_exp, .box_proy, .proy_img, .exp_img {
+    flex-flow: row wrap;
+    margin: auto;
+  }
+}

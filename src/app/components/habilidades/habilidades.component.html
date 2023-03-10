@@ -1,0 +1,11 @@
+<div class="container_about">
+  <h2>Mis Habilidades:</h2>
+  <p>Tanto lenguajes de programación, como programas e idiomas, estas son mis habilidades dentro del área computacional.</p>
+</div>
+<div class="container_stats">
+  <div class="stat" *ngFor="let abilities of abilitiesList">
+    <div class="full_stat">
+      <div class="percentage" [ngStyle]="{ 'width': abilities.skill }">{{ abilities.name }}  <span>{{ abilities.skill }}</span></div>
+    </div>
+  </div>
+</div>

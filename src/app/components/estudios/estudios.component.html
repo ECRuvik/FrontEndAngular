@@ -1,0 +1,12 @@
+<div class="container_est">
+  <div class="container_edu" *ngFor="let studies of studiesList">
+      <div class="box_edu_1">
+          <img [src]="studies.logo" alt="">
+      </div>
+      <div class="box_edu_2">
+          <h3>{{ studies.name }} | {{ studies.by }} {{ studies.start }}-{{ studies.end }} | {{ studies.title }}</h3>
+          <p>{{ studies.about }}</p>
+      </div>
+  </div>
+  <app-add-btn (btnClick)="toggleAddTask()"></app-add-btn>
+</div>

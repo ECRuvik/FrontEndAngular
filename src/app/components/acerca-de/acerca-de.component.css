@@ -1,0 +1,40 @@
+/* ACERCA DE */
+
+.profile_card {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f0f0f;
+}
+
+.box_card_1 img {
+  width: 160px;
+  margin: 30px;
+  border: #00ffff 2px solid;
+  border-radius: 12px;
+  flex-grow: 1;
+}
+
+.box_card_2 {
+  margin: 10px;
+  flex-grow: 2;
+}
+
+.box_card_2 h2 {
+  color: #00ffff;
+}
+
+.box_card_2 h3 {
+  color: #90ffff;
+  font-size: 16px;
+}
+
+@media (max-width: 500px) {
+  .profile_card {
+    flex-flow: row wrap;
+    text-align: center;
+  }
+}

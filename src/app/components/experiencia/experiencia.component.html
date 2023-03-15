@@ -1,12 +1,9 @@
-<div class="container_exp">
-  <h3>Experiencia Laboral</h3>
-  <div class="box_exp" *ngFor="let jobs of jobsList">
-      <div class="exp_img">
-          <img [src]="jobs.logo" alt="">
-      </div>
-      <div class="exp_desc">
-          <h4>{{ jobs.name }} | {{ jobs.time }} | {{ jobs.start }} - {{ jobs.end }}</h4>
-          <p>{{ jobs.about }}</p>
-      </div>
+<div class="box_exp" *ngFor="let jobs of jobsList">
+  <div class="exp_img">
+    <img [src]="jobs.logo" alt="">
+  </div>
+  <div class="exp_desc">
+    <h4>{{ jobs.name }} | {{ jobs.time }} | {{ jobs.start }} - {{ jobs.end }}</h4>
+    <p>{{ jobs.about }}</p>
   </div>
 </div>

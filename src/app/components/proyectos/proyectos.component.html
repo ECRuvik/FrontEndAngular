@@ -1,13 +1,10 @@
-<div class="container_proy">
-  <h3>Proyectos en los que he formado parte.</h3>
-  <div class="box_proy" *ngFor="let proyects of proyectList">
-      <div class="proy_img">
-          <img [src]="proyects.logo" alt="">
-      </div>
-      <div class="proy_desc">
-          <h4>{{ proyects.name }} | {{ proyects.status }} {{ proyects.start }}-{{ proyects.end }} | {{ proyects.type }}.</h4>
-          <p>{{ proyects.about }}</p>
-          <a href="#" class="btn btn-success">Ver más</a>
-      </div>
+<div class="box_proy" *ngFor="let proyects of proyectList">
+  <div class="proy_img">
+    <img [src]="proyects.logo" alt="">
+  </div>
+  <div class="proy_desc">
+    <h4>{{ proyects.name }} | {{ proyects.status }} {{ proyects.start }}-{{ proyects.end }} | {{ proyects.type }}.</h4>
+    <p>{{ proyects.about }}</p>
+    <a href="#" class="btn btn-success">Ver más</a>
   </div>
 </div>

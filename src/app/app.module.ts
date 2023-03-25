@@ -14,8 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddBtnComponent } from './components/add-btn/add-btn.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
-import { LoginFormComponent } from './components/login-form/login-form.component';
-import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { LoginComponent } from './components/login/login.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +30,9 @@ import { RegisterFormComponent } from './components/register-form/register-form.
     AddBtnComponent,
     ExperienciaComponent,
     ProyectosComponent,
-    LoginFormComponent,
-    RegisterFormComponent,
+    LoginComponent,
+    PortfolioComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

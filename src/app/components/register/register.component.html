@@ -1,24 +1,54 @@
 <div class="container_form">
   <div class="form_box">
     <div class="form_value">
-      <form action="">
+      <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
         <h2>Registrarse</h2>
         <div class="input_box">
           <i class="fa-solid fa-envelope"></i>
-          <input type="email" name="email" id="email" required>
+          <input type="email" formControlName="email" id="email" placeholder="`" required>
           <label for="">Correo Electrónico</label>
+        </div>
+        <div *ngIf="Email?.errors && Email?.touched">
+          <p *ngIf="Email?.hasError('required')" class="text_danger">
+            Un Correo Electrónico es requerido.
+          </p>
+          <p *ngIf="Email?.hasError('email')" class="text_danger">
+            Este correo no es valido.
+          </p>
         </div>
         <div class="input_box">
           <i class="fa-solid fa-user"></i>
-          <input type="username" name="username" id="username" required>
+          <input type="username" formControlName="username" id="username" placeholder="`" required>
           <label for="">Nombre de Usuario</label>
+        </div>
+        <div *ngIf="Username?.errors && Username?.touched">
+          <p *ngIf="Username?.hasError('required')" class="text_danger">
+            Un nombre de usuario es requerido.
+          </p>
+          <p *ngIf="Username?.errors?.['minlength']" class="text_danger">
+            El nombre de usuario debe contener 4 o mas caracteres.
+          </p>
+          <p *ngIf="Username?.errors?.['maxlength']" class="text_danger">
+            El nombre de usuario debe contener como máximo 28 caracteres.
+          </p>
         </div>
         <div class="input_box">
           <i class="fa-solid fa-lock"></i>
-          <input type="password" name="password" id="password" required>
+          <input type="password" formControlName="password" id="password" placeholder="`" required>
           <label for="">Contraseña</label>
         </div>
-        <button>Registrarme<i class="fa-solid fa-clipboard-list-check"></i></button>
+        <div *ngIf="Password?.errors && Password?.touched">
+          <p *ngIf="Password?.hasError('required')" class="text_danger">
+            Una contraseña es requerida.
+          </p>
+          <p *ngIf="Password?.errors?.['minlength']" class="text_danger">
+            La contraseña debe contener 8 o mas caracteres.
+          </p>
+          <p *ngIf="Password?.errors?.['maxlength']" class="text_danger">
+            La contraseña debe contener como máximo 60 caracteres.
+          </p>
+        </div>
+        <button type="submit">Registrarme<i class="fa-solid fa-clipboard-list-check"></i></button>
         <div class="login">
           <p>¿Ya tienes una cuenta? <a href="#">Iniciar Sesión</a></p>
         </div>

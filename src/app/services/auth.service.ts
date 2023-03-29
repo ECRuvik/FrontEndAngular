@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import baseUrl from './helper';
 
 @Injectable({
   providedIn: 'root'
@@ -8,22 +10,26 @@ import { Router } from '@angular/router';
 
 export class AuthService {
 
-  uri = 'http://localhost:4200/api';
-  /* token; */
+  currentUserSubject: BehaviorSubject<any>;
 
-  constructor(private http: HttpClient,private router: Router) { }
-
-  login(email: string, password: string) {
-    this.http.post(this.uri + '/authenticate', {email: email,password: password}).subscribe((resp: any) => {
-      this.router.navigate(['profile']);
-      localStorage.setItem('auth_token', resp.token);
-    });
-  }
-  logout() {
-    localStorage.removeItem('token');
+  constructor(private http:HttpClient) {
+    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || '{}'));
   }
 
-  public get logIn(): boolean {
-    return (localStorage.getItem('token') !== null);
+  login(credentials:any):Observable<any> {
+    return this.http.post(baseUrl, credentials).pipe(map(data=>{
+      sessionStorage.setItem('currentUser', JSON.stringify(data));
+      this.currentUserSubject.next(data);
+      return data;
+    }));
   }
+
+  signup(user:any) {
+    return this.http.post(`${baseUrl}users/add`, user);
+  }
+
+  get AuthUser() {
+    return this.currentUserSubject.value;
+  }
+
 }

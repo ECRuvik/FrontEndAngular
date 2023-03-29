@@ -14,7 +14,7 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.person = data.person;
+      this.person = data[0].person;
     });
   }
 }

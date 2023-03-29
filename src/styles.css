@@ -17,3 +17,18 @@ a {
 ul {
   list-style: none;
 }
+
+.text_danger {
+  font-weight: lighter;
+  color: #fd8080;
+}
+
+.text_allowed {
+  font-weight: lighter;
+  color: #4eff4e;
+}
+
+.text_caution {
+  font-weight: lighter;
+  color: #fff23f;
+}

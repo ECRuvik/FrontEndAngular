@@ -10,12 +10,6 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegisterComponent  implements OnInit {
 
-  public user = {
-    username: '',
-    email: '',
-    password: ''
-  }
-
   form:FormGroup;
 
   constructor(private formBuilder:FormBuilder, private authService:AuthService, private route:Router) {
@@ -32,7 +26,10 @@ export class RegisterComponent  implements OnInit {
   onSubmit(event: Event) {
     event.preventDefault();
     this.authService.signup(this.form.value).subscribe(data=>{
+      JSON.stringify(data);
       this.route.navigate(['/login']);
+    }, error => {
+      console.error(error);
     })
   }
 

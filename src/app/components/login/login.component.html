@@ -28,6 +28,9 @@
           <p *ngIf="Password?.errors?.['minlength']" class="text_danger">
             La contraseña debe contener 8 o mas caracteres.
           </p>
+          <p *ngIf="Password?.errors?.['maxlength']" class="text_danger">
+            La contraseña debe contener como máximo 60 caracteres.
+          </p>
         </div>
         <button type="submit">Iniciar Sesión<i class="fa-solid fa-clipboard-list-check"></i></button>
         <div class="register">

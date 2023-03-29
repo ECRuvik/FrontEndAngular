@@ -12,10 +12,10 @@ export class LoginComponent implements OnInit {
 
   form:FormGroup;
 
-  constructor(private formBuilder:FormBuilder, private authService:AuthService, private rute:Router) {
+  constructor(private formBuilder:FormBuilder, private authService:AuthService, private route:Router) {
     this.form = this.formBuilder.group({
         email:['', [Validators.required, Validators.email]],
-        password:['', [Validators.required, Validators.minLength(8)]]
+        password:['', [Validators.required, Validators.minLength(8), Validators.maxLength(60)]]
       })
   }
 
@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   onSubmit(event: Event) {
     event.preventDefault();
     this.authService.login(this.form.value).subscribe(data=>{
-      console.log("DATA:" + JSON.stringify(data));
-      this.rute.navigate(['/portfolio']);
+      JSON.stringify(data);
+      this.route.navigate(['/portfolio']);
     })
   }
 

@@ -16,7 +16,6 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { LoginComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InterceptorService } from './services/interceptor.service';
 
@@ -34,7 +33,6 @@ import { InterceptorService } from './services/interceptor.service';
     ProyectosComponent,
     LoginComponent,
     PortfolioComponent,
-    RegisterComponent,
   ],
   imports: [
     BrowserModule,

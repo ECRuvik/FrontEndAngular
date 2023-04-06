@@ -4,13 +4,12 @@ import { Auth } from '@angular/fire/auth';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  miPortfolio: any;
 
-  miPortfolio:any;
+  constructor(private auth: Auth) {}
 
-  constructor(private auth: Auth) { }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

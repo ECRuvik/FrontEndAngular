@@ -5,7 +5,13 @@
         <h2>Iniciar Sesión</h2>
         <div class="input_box">
           <i class="fa-solid fa-user"></i>
-          <input type="email" formControlName="email" id="email" placeholder="`" required>
+          <input
+            type="email"
+            formControlName="email"
+            id="email"
+            placeholder="`"
+            required
+          />
           <label for="">Correo Electrónico</label>
         </div>
         <div *ngIf="Email?.errors && Email?.touched">
@@ -18,7 +24,13 @@
         </div>
         <div class="input_box">
           <i class="fa-solid fa-lock"></i>
-          <input type="password" formControlName="password" id="password" placeholder="`" required>
+          <input
+            type="password"
+            formControlName="password"
+            id="password"
+            placeholder="`"
+            required
+          />
           <label for="">Contraseña</label>
         </div>
         <div *ngIf="Password?.errors && Password?.touched">
@@ -32,7 +44,9 @@
             La contraseña debe contener como máximo 60 caracteres.
           </p>
         </div>
-        <button type="submit">Iniciar Sesión<i class="fa-solid fa-clipboard-list-check"></i></button>
+        <button type="submit">
+          Iniciar Sesión<i class="fa-solid fa-clipboard-list-check"></i>
+        </button>
       </form>
     </div>
   </div>

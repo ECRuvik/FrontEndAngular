@@ -1,21 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Job } from 'src/app/model/job.model';
 import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
-  styleUrls: ['./experiencia.component.css']
+  styleUrls: ['./experiencia.component.css'],
 })
-export class ExperienciaComponent {
+export class ExperienciaComponent implements OnInit {
+  jobsList: any;
 
-  jobsList:any = new Job('', '', '', '', '', '');
-
-  constructor(private jobServ:JobService) { }
+  constructor(private jobServ: JobService) {}
 
   ngOnInit(): void {
-    this.jobServ.getJobs().subscribe(data => {
+    this.seeJobs();
+  }
+
+  seeJobs(): void {
+    this.jobServ.getAll().subscribe((data) => {
       this.jobsList = data;
     });
+  }
+
+  delete(id?: number) {
+    if (id != undefined) {
+      this.jobServ.delete(id).subscribe(
+        (data) => {
+          this.seeJobs();
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    }
   }
 }

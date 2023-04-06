@@ -7,20 +7,19 @@ import { JobService } from 'src/app/services/job.service';
 @Component({
   selector: 'app-acerca-de',
   templateUrl: './acerca-de.component.html',
-  styleUrls: ['./acerca-de.component.css']
+  styleUrls: ['./acerca-de.component.css'],
 })
 export class AcercaDeComponent implements OnInit {
+  person: any;
+  job: any;
 
-  person: Data = new Data('', '', '', '', '', '', '');
-  job: Job = new Job('', '', '', '', '', '');
-
-  constructor(private dataServ:DataService, private jobServ:JobService) { }
+  constructor(private dataServ: DataService, private jobServ: JobService) {}
 
   ngOnInit(): void {
-    this.dataServ.getData().subscribe(data => {
+    this.dataServ.getAll().subscribe((data) => {
       this.person = data;
     });
-    this.jobServ.getJobs().subscribe(data => {
+    this.jobServ.getAll().subscribe((data) => {
       this.job = data;
     });
   }

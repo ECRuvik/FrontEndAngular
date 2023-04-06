@@ -24,7 +24,7 @@
 }
 @media (max-width: 1060px) {
   .container_info {
-      flex-flow: column wrap;
+    flex-flow: column wrap;
   }
   .container_box {
     width: 100%;

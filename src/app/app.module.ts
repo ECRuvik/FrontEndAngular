@@ -49,9 +49,18 @@ import { SkillService } from './services/skill.service';
     HttpClientModule,
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
   ],
-  providers: [DataService, StudyService, SkillService, StateService, ProyectService, LocationsService, JobService, AuthService],
-  bootstrap: [AppComponent]
+  providers: [
+    DataService,
+    StudyService,
+    SkillService,
+    StateService,
+    ProyectService,
+    LocationsService,
+    JobService,
+    AuthService,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

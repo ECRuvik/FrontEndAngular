@@ -2,16 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Proyect } from '../model/proyect.model';
-import baseUrl from './helper';
+import { BaseService } from './base.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ProyectService {
-
-  constructor(private http:HttpClient) { }
-
-  public getProyects(): Observable<Proyect> {
-    return this.http.get<Proyect>(`${baseUrl}`+ 'proyects/watch');
+export class ProyectService extends BaseService<Proyect> {
+  constructor(protected override http: HttpClient) {
+    super(http, 'proyects');
   }
 }

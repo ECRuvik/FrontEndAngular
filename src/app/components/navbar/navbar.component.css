@@ -31,7 +31,7 @@
 }
 
 .nav-main ul li a:hover {
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   border-bottom: #00ffff 1px solid;
   color: #c9c9c9;
 }
@@ -57,11 +57,11 @@
 }
 
 .nav-menu-right a:hover {
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   color: #c9c9c9;
 }
 
 .gris {
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   color: #c9c9c9;
 }

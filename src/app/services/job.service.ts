@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
+import { BaseService } from './base.service';
 import { Job } from '../model/job.model';
-import baseUrl from './helper';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class JobService {
-
-  constructor(private http:HttpClient) { }
-
-  public getJobs(): Observable<Job> {
-    return this.http.get<Job>(`${baseUrl}`+ 'jobs/watch');
+export class JobService extends BaseService<Job> {
+  constructor(protected override http: HttpClient) {
+    super(http, 'jobs');
   }
 }

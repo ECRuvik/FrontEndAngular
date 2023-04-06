@@ -1,19 +1,27 @@
 export class Job {
-  id?: number;
+  job_id: number;
   about: string;
   endDate: string;
-  logoUrl: string;
+  logo_url: string;
   name: string;
   position: string;
   startDate: string;
 
-	constructor(about: string, endDate: string, logoUrl: string, name: string, position: string, startDate: string) {
+  constructor(
+    job_id: number,
+    about: string,
+    endDate: string,
+    logo_url: string,
+    name: string,
+    position: string,
+    startDate: string
+  ) {
+    this.job_id = job_id;
     this.about = about;
     this.endDate = endDate;
-    this.logoUrl = logoUrl;
+    this.logo_url = logo_url;
     this.name = name;
     this.position = position;
     this.startDate = startDate;
-	}
-
+  }
 }

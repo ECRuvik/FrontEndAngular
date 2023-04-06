@@ -31,12 +31,12 @@
   width: 80%;
 }
 
-.box_edu_2 h3 {
+.box_edu_2 h4 {
   color: #90ffff;
 }
 
 @media (max-width: 1300px) {
   .box_edu_1 img {
-      display: none;
+    display: none;
   }
 }

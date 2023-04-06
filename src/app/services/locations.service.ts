@@ -2,17 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Locations } from '../model/locations.model';
-import baseUrl from './helper';
+import { BaseService } from './base.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class LocationsService {
-
-  constructor(private http:HttpClient) { }
-
-  public getLocations(): Observable<Locations> {
-    return this.http.get<Locations>(`${baseUrl}`+ 'locations/watch');
+export class LocationsService extends BaseService<Locations> {
+  constructor(protected override http: HttpClient) {
+    super(http, 'locations');
   }
-
 }

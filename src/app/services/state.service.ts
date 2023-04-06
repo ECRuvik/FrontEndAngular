@@ -2,16 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { State } from '../model/state.model';
-import baseUrl from './helper';
+import { BaseService } from './base.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class StateService {
-
-  constructor(private http:HttpClient) { }
-
-  public getState(): Observable<State> {
-    return this.http.get<State>(`${baseUrl}`+ 'states/watch');
+export class StateService extends BaseService<State> {
+  constructor(protected override http: HttpClient) {
+    super(http, 'states');
   }
 }

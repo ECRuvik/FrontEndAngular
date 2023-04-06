@@ -1,9 +1,14 @@
 <div class="box_proy" *ngFor="let proyects of proyectList">
   <div class="proy_img">
-    <img [src]="proyects.logoUrl" alt="">
+    <img [src]="proyects.logoUrl" alt="" />
   </div>
   <div class="proy_desc">
-    <h4>{{ proyects.name }} | {{ proyects.status }} {{ proyects.startDate }}-{{ proyects.endDate }} | {{ proyects.type }}.</h4>
+    <h4>
+      {{ proyects.name }} | {{ proyects.status }} {{ proyects.startDate }}-{{
+        proyects.endDate
+      }}
+      | {{ proyects.type }}.
+    </h4>
     <p>{{ proyects.about }}</p>
     <a href="{{ proyects.url }}" class="btn btn-success">Ver más</a>
   </div>

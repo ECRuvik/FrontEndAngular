@@ -6,7 +6,7 @@
 body {
   background-color: #070707;
   color: #888888;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 a {
@@ -16,6 +16,18 @@ a {
 
 ul {
   list-style: none;
+}
+
+.button {
+  background-color: #1f1f1f;
+  color: #0f0f0f;
+  border: none;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background-color: #0f0f0f;
+  color: #1f1f1f;
 }
 
 .text_danger {

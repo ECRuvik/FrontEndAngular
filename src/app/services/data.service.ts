@@ -2,17 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Data } from '../model/data.model';
-import baseUrl from './helper';
+import { BaseService } from './base.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class DataService {
-
-  constructor(private http:HttpClient) { }
-
-  public getData(): Observable<Data> {
-    return this.http.get<Data>(`${baseUrl}`+ 'data/watch');
+export class DataService extends BaseService<Data> {
+  constructor(protected override http: HttpClient) {
+    super(http, 'data');
   }
-
 }

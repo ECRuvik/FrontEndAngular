@@ -9,7 +9,16 @@ export class Proyect {
   type: string;
   url: string;
 
-	constructor(about: string, endDate: Date, logoUrl: string, name: string, status: string, type: string, startDate: Date, url: string) {
+  constructor(
+    about: string,
+    endDate: Date,
+    logoUrl: string,
+    name: string,
+    status: string,
+    type: string,
+    startDate: Date,
+    url: string
+  ) {
     this.about = about;
     this.endDate = endDate;
     this.logoUrl = logoUrl;
@@ -19,5 +28,4 @@ export class Proyect {
     this.type = type;
     this.url = url;
   }
-
 }

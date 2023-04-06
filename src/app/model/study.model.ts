@@ -1,21 +1,30 @@
 export class Study {
-  id?: number;
+  study_id: number;
   about: string;
   endDate: string;
   institution: string;
-  logoUrl: string;
+  logo_url: string;
   name: string;
   title: string;
   startDate: string;
 
-	constructor(about: string, endDate: string, institution: string, logoUrl: string, name: string, title: string, startDate: string) {
+  constructor(
+    study_id: number,
+    about: string,
+    endDate: string,
+    institution: string,
+    logo_url: string,
+    name: string,
+    title: string,
+    startDate: string
+  ) {
+    this.study_id = study_id;
     this.about = about;
     this.endDate = endDate;
     this.institution = institution;
-    this.logoUrl = logoUrl;
+    this.logo_url = logo_url;
     this.name = name;
     this.title = title;
     this.startDate = startDate;
-	}
-
+  }
 }

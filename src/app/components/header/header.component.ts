@@ -4,16 +4,15 @@ import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  person: any;
 
-  person:any;
-
-  constructor(private dataServ:DataService) { }
+  constructor(private dataServ: DataService) {}
 
   ngOnInit(): void {
-    this.dataServ.getData().subscribe(data => {
+    this.dataServ.getAll().subscribe((data) => {
       this.person = data;
     });
   }

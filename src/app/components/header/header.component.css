@@ -55,9 +55,13 @@
 }
 
 @media (max-width: 700px) {
-  .top_left_header, .top_right_header, .bot_left_header, .bot_left_header p, .bot_right_header {
-      width: 100%;
-      margin: auto;
-      text-align: center;
+  .top_left_header,
+  .top_right_header,
+  .bot_left_header,
+  .bot_left_header p,
+  .bot_right_header {
+    width: 100%;
+    margin: auto;
+    text-align: center;
   }
 }

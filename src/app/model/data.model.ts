@@ -1,20 +1,30 @@
 export class Data {
-  id?: number;
+  data_id: number;
   about: string;
   fullName: string;
   lastName: string;
   position: string;
   name: string;
   resume: string;
-  urlImg: string;
+  url_img: string;
 
-  constructor(about: string, fullName: string, lastName: string, position: string, name: string, resume: string, urlImg: string) {
+  constructor(
+    data_id: number,
+    about: string,
+    fullName: string,
+    lastName: string,
+    position: string,
+    name: string,
+    resume: string,
+    url_img: string
+  ) {
+    this.data_id = data_id;
     this.about = about;
     this.fullName = fullName;
     this.lastName = lastName;
     this.position = position;
     this.name = name;
     this.resume = resume;
-    this.urlImg = urlImg;
+    this.url_img = url_img;
   }
 }

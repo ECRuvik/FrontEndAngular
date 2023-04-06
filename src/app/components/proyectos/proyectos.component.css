@@ -37,7 +37,8 @@
 }
 
 @media (max-width: 500px) {
-  .box_proy, .proy_img {
+  .box_proy,
+  .proy_img {
     flex-flow: row wrap;
     margin: auto;
   }

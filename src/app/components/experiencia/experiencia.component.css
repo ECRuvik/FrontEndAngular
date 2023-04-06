@@ -28,7 +28,8 @@
 }
 
 @media (max-width: 500px) {
-  .box_exp, .exp_img {
+  .box_exp,
+  .exp_img {
     flex-flow: row wrap;
     margin: auto;
   }

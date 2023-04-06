@@ -1,9 +1,9 @@
 <div class="box_exp" *ngFor="let jobs of jobsList">
   <div class="exp_img">
-    <img [src]="jobs.logo" alt="">
+    <img [src]="jobs.logoUrl" alt="">
   </div>
   <div class="exp_desc">
-    <h4>{{ jobs.name }} | {{ jobs.time }} | {{ jobs.start }} - {{ jobs.end }}</h4>
+    <h4>{{ jobs.name }} | {{ jobs.time }} | {{ jobs.startDate }} - {{ jobs.endDate }}</h4>
     <p>{{ jobs.about }}</p>
   </div>
 </div>

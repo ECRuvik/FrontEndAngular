@@ -8,11 +8,12 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   form:FormGroup;
 
-  constructor(private formBuilder:FormBuilder, private authService:AuthService, private route:Router) {
+  constructor(private formBuilder:FormBuilder, private authService:AuthService, private router:Router) {
     this.form = this.formBuilder.group({
         email:['', [Validators.required, Validators.email]],
         password:['', [Validators.required, Validators.minLength(8), Validators.maxLength(60)]]
@@ -22,11 +23,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void { }
 
   onSubmit(event: Event) {
-    event.preventDefault();
-    this.authService.login(this.form.value).subscribe(data=>{
-      JSON.stringify(data);
-      this.route.navigate(['/portfolio']);
+    this.authService.login(this.form.value)
+    .then(response => {
+      this.router.navigate(['/portfolio'])
     })
+    .catch(error => console.log(error));
   }
 
   get Email() {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { Study } from 'src/app/model/study.model';
+import { StudyService } from 'src/app/services/study.service';
 
 @Component({
   selector: 'app-estudios',
@@ -8,19 +9,13 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class EstudiosComponent implements OnInit {
 
-  datos:any;
-  studiesList:any;
+  studiesData: any;
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private studiesServ:StudyService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.studiesList = data.studies;
-      this.datos = data;
+    this.studiesServ.getStudies().subscribe(data => {
+      this.studiesData = data;
     });
-  }
-
-  toggleAddTask() {
-    console.log('toggle add task');
   }
 }

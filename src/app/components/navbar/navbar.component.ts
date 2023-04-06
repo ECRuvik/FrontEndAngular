@@ -1,20 +1,16 @@
-import { Component } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { Component, OnInit } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
 
   miPortfolio:any;
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private auth: Auth) { }
 
-  ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.miPortfolio = data;
-    });
-  }
+  ngOnInit(): void { }
 }

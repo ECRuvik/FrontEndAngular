@@ -1,10 +1,10 @@
 <div class="profile_card" id="saber_mas">
   <div class="box_card_1">
-  <img [src]="person.image" alt="Foto de Perfil">
+  <img [src]="person.urlImg" alt="Foto de Perfil">
   </div>
   <div class="box_card_2">
-      <h2><b>{{ person.firstName }} {{ person.secondName }} {{ person.lastName }}</b></h2>
-      <h3>{{ person.position }}</h3>
+      <h2><b>{{ person.fullName }}</b></h2>
+      <h3>{{ job.position }}</h3>
       <p>{{ person.about }}</p>
   </div>
 </div>

@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { Component, OnInit } from '@angular/core';
+import { ProyectService } from 'src/app/services/proyect.service';
 
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',
   styleUrls: ['./proyectos.component.css']
 })
-export class ProyectosComponent {
+export class ProyectosComponent implements OnInit {
 
   proyectList:any;
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private proyectServ:ProyectService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.proyectList = data.proyects;
+    this.proyectServ.getProyects().subscribe(data => {
+      this.proyectList = data;
     });
   }
 }

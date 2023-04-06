@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { Component, OnInit } from '@angular/core';
+import { SkillService } from 'src/app/services/skill.service';
 
 @Component({
   selector: 'app-habilidades',
   templateUrl: './habilidades.component.html',
   styleUrls: ['./habilidades.component.css']
 })
-export class HabilidadesComponent {
+export class HabilidadesComponent implements OnInit {
 
   abilitiesList:any;
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private skillServ:SkillService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.abilitiesList = data.abilities;
+    this.skillServ.getSkills().subscribe(data => {
+      this.abilitiesList = data;
     });
   }
 }

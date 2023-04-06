@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { Job } from 'src/app/model/job.model';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -8,13 +9,13 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class ExperienciaComponent {
 
-  jobsList:any;
+  jobsList:any = new Job('', '', '', '', '', '');
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private jobServ:JobService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.jobsList = data.jobs;
+    this.jobServ.getJobs().subscribe(data => {
+      this.jobsList = data;
     });
   }
 }

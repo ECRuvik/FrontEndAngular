@@ -1,0 +1,57 @@
+<div class="container_modal">
+  <h1>Agregar nuevo estudio</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="input_container">
+      <label> Nombre del estudio </label>
+      <input type="text" [(ngModel)]="newStudy.name" name="name" required />
+    </div>
+    <div class="input_container">
+      <label> Institución </label>
+      <input
+        type="text"
+        [(ngModel)]="newStudy.institution"
+        name="institution"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Título </label>
+      <input type="text" [(ngModel)]="newStudy.title" name="title" required />
+    </div>
+    <div class="input_container">
+      <label> URL del logotipo </label>
+      <input
+        type="text"
+        [(ngModel)]="newStudy.logo_url"
+        name="logoUrl"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de inicio </label>
+      <input
+        type="date"
+        [(ngModel)]="newStudy.startDate"
+        name="startDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de fin </label>
+      <input
+        type="date"
+        [(ngModel)]="newStudy.endDate"
+        name="endDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Descripción </label>
+      <textarea [(ngModel)]="newStudy.about" name="about" required></textarea>
+    </div>
+    <div class="container_modal_btn">
+      <button class="modal-cancel-btn" (click)="close()">Cancelar</button>
+      <button type="submit" class="modal-accept-btn">Guardar</button>
+    </div>
+  </form>
+</div>

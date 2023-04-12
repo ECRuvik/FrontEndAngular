@@ -87,16 +87,3 @@ button:hover {
   background-color: #5effff;
   color: #202020;
 }
-
-.register {
-  font-size: 0.9em;
-  color: #f3f3f3;
-  text-align: center;
-  margin: 25px 0 10px;
-}
-
-.register p a {
-  text-decoration: none;
-  color: #00ffff;
-  font-weight: 600;
-}

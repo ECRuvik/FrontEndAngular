@@ -7,12 +7,28 @@
       <h4>
         {{ studies.name }} | {{ studies.institution }} | {{ studies.title }}
       </h4>
-      <h6>{{ studies.startDate }}-{{ studies.endDate }}</h6>
+      <h6>Desde: {{ studies.startDate }} | Hasta: {{ studies.endDate }}.</h6>
       <p>{{ studies.about }}</p>
     </div>
-    <button class="button" (click)="delete(studies.study_id)">
+    <button class="edit-btn" (click)="edit(studies)">
+      <i class="fa-solid fa-pencil"></i>
+    </button>
+    <button class="delete-btn" (click)="delete(studies.study_id)">
       <i class="fa-solid fa-trash"></i>
     </button>
   </div>
-  <app-add-btn (btnClick)="(null)"></app-add-btn>
+  <button class="add-btn" (click)="add()">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+  <app-add-btn
+    *ngIf="showAddBtn"
+    (onAddStudy)="addStudy($event)"
+    (closeAddBtn)="showAddBtn = false"
+  ></app-add-btn>
+  <app-edit-btn
+    *ngIf="showEditBtn"
+    [study]="selectedStudy"
+    (onEditStudy)="editStudy($event)"
+    (closeEditBtn)="showEditBtn = false"
+  ></app-edit-btn>
 </div>

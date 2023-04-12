@@ -1,0 +1,78 @@
+<div class="container_modal">
+  <h1>Editar un estudio</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="input_container">
+      <label> Nombre del estudio </label>
+      <input
+        type="text"
+        [(ngModel)]="study.name"
+        name="name"
+        [placeholder]="study.name"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Institución </label>
+      <input
+        type="text"
+        [(ngModel)]="study.institution"
+        name="institution"
+        [placeholder]="study.institution"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Título </label>
+      <input
+        type="text"
+        [(ngModel)]="study.title"
+        name="title"
+        [placeholder]="study.title"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> URL del logotipo </label>
+      <input
+        type="text"
+        [(ngModel)]="study.logo_url"
+        name="logoUrl"
+        [placeholder]="study.logo_url"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de inicio </label>
+      <input
+        type="date"
+        [(ngModel)]="study.startDate"
+        name="startDate"
+        [placeholder]="study.startDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de fin </label>
+      <input
+        type="date"
+        [(ngModel)]="study.endDate"
+        name="endDate"
+        [placeholder]="study.endDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Descripción </label>
+      <textarea
+        [(ngModel)]="study.about"
+        name="about"
+        [placeholder]="study.about"
+        required
+      ></textarea>
+    </div>
+    <div class="container_modal_btn">
+      <button class="modal-cancel-btn" (click)="close()">Cancelar</button>
+      <button type="submit" class="modal-accept-btn">Guardar</button>
+    </div>
+  </form>
+</div>

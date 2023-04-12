@@ -6,6 +6,7 @@
       <input
         type="text"
         [(ngModel)]="study.name"
+        (ngModelChange)="formChanged = true"
         name="name"
         [placeholder]="study.name"
         required
@@ -16,6 +17,7 @@
       <input
         type="text"
         [(ngModel)]="study.institution"
+        (ngModelChange)="formChanged = true"
         name="institution"
         [placeholder]="study.institution"
         required
@@ -26,6 +28,7 @@
       <input
         type="text"
         [(ngModel)]="study.title"
+        (ngModelChange)="formChanged = true"
         name="title"
         [placeholder]="study.title"
         required
@@ -36,6 +39,7 @@
       <input
         type="text"
         [(ngModel)]="study.logo_url"
+        (ngModelChange)="formChanged = true"
         name="logoUrl"
         [placeholder]="study.logo_url"
         required
@@ -46,6 +50,7 @@
       <input
         type="date"
         [(ngModel)]="study.startDate"
+        (ngModelChange)="formChanged = true"
         name="startDate"
         [placeholder]="study.startDate"
         required
@@ -56,6 +61,7 @@
       <input
         type="date"
         [(ngModel)]="study.endDate"
+        (ngModelChange)="formChanged = true"
         name="endDate"
         [placeholder]="study.endDate"
         required
@@ -65,13 +71,14 @@
       <label> Descripción </label>
       <textarea
         [(ngModel)]="study.about"
+        (ngModelChange)="formChanged = true"
         name="about"
         [placeholder]="study.about"
         required
       ></textarea>
     </div>
     <div class="container_modal_btn">
-      <button class="modal-cancel-btn" (click)="close()">Cancelar</button>
+      <button class="modal-cancel-btn" (click)="cancel(studyForm)">Restaurar</button>
       <button type="submit" class="modal-accept-btn">Guardar</button>
     </div>
   </form>

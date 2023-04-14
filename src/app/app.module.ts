@@ -29,6 +29,8 @@ import { AuthService } from './services/auth.service';
 import { SkillService } from './services/skill.service';
 import { FormsModule } from '@angular/forms';
 import { EditBtnComponent } from './components/portfolio/estudios/edit-btn/edit-btn.component';
+import { AddAcercaDeComponent } from './components/portfolio/acerca-de/add-acerca-de/add-acerca-de.component';
+import { EditAcercaDeComponent } from './components/portfolio/acerca-de/edit-acerca-de/edit-acerca-de.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { EditBtnComponent } from './components/portfolio/estudios/edit-btn/edit-
     LoginComponent,
     PortfolioComponent,
     EditBtnComponent,
+    AddAcercaDeComponent,
+    EditAcercaDeComponent,
   ],
   imports: [
     BrowserModule,

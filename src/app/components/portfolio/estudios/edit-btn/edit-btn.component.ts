@@ -22,11 +22,12 @@ export class EditBtnComponent implements OnInit {
 
   onSubmit(): void {
     if (this.study) {
-      this.studyServ.update(this.study.study_id, this.study).subscribe((data) => {
-        this.onEditStudy.emit(data);
-        this.closeEditBtn.emit(true);
-      });
+      this.studyServ
+        .update(this.study.study_id, this.study)
+        .subscribe((data) => {
+          this.onEditStudy.emit(data);
+          this.closeEditBtn.emit(true);
+        });
     }
   }
-
 }

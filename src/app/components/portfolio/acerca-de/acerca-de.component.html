@@ -1,4 +1,4 @@
-<div class="profile_card" id="saber_mas">
+<div class="profile_card" id="saber_mas" *ngFor="let person of personData">
   <div class="box_card_1">
     <img [src]="person.url_img" alt="Foto de Perfil" />
   </div>
@@ -6,7 +6,27 @@
     <h2>
       <b>{{ person.fullName }}</b>
     </h2>
-    <h3>{{ job.position }}</h3>
+    <h3>{{ person.position }}</h3>
     <p>{{ person.about }}</p>
   </div>
+  <button class="edit-btn" (click)="edit(person)">
+    <i class="fa-solid fa-pencil"></i>
+  </button>
+  <button class="delete-btn" (click)="delete(person.data_id)">
+    <i class="fa-solid fa-trash"></i>
+  </button>
 </div>
+<button class="add-btn" (click)="add()">
+  <i class="fa-solid fa-plus"></i>
+</button>
+<app-add-acerca-de
+  *ngIf="showAddBtn"
+  (onAddPerson)="addPerson($event)"
+  (closeAddBtn)="showAddBtn = false"
+></app-add-acerca-de>
+<app-edit-acerca-de
+  *ngIf="showEditBtn"
+  [person]="selectedPerson"
+  (onEditPerson)="editPerson($event)"
+  (closeEditBtn)="showEditBtn = false"
+></app-edit-acerca-de>

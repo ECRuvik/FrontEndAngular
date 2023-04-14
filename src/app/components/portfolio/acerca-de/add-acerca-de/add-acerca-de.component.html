@@ -1,0 +1,76 @@
+<div class="container_modal">
+  <h1>Agregar nuevo perfil</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="input_container">
+      <label> Nombre/s </label>
+      <input
+        type="text"
+        [(ngModel)]="newPerson.name"
+        name="name"
+        [placeholder]="newPerson.name"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Apellido/s </label>
+      <input
+        type="text"
+        [(ngModel)]="newPerson.lastName"
+        name="lastName"
+        [placeholder]="newPerson.lastName"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de nacimiento </label>
+      <input
+        type="date"
+        [(ngModel)]="newPerson.birthDate"
+        name="birthDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Posición </label>
+      <input
+        type="text"
+        [(ngModel)]="newPerson.position"
+        name="position"
+        [placeholder]="newPerson.position"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> URL foto de perfil </label>
+      <input
+        type="text"
+        [(ngModel)]="newPerson.url_img"
+        name="url_img"
+        [placeholder]="newPerson.url_img"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Descripción </label>
+      <textarea
+        [(ngModel)]="newPerson.about"
+        name="about"
+        [placeholder]="newPerson.about"
+        required
+      ></textarea>
+    </div>
+    <div class="input_container">
+      <label> Resumen (Descripción corta) </label>
+      <textarea
+        [(ngModel)]="newPerson.resume"
+        name="resume"
+        [placeholder]="newPerson.resume"
+        required
+      ></textarea>
+    </div>
+    <div class="container_modal_btn">
+      <button class="modal-cancel-btn" (click)="close()">Cancelar</button>
+      <button type="submit" class="modal-accept-btn">Guardar</button>
+    </div>
+  </form>
+</div>

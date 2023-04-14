@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Data } from 'src/app/model/data.model';
-import { Job } from 'src/app/model/job.model';
 import { DataService } from 'src/app/services/data.service';
-import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -10,17 +8,55 @@ import { JobService } from 'src/app/services/job.service';
   styleUrls: ['./acerca-de.component.css'],
 })
 export class AcercaDeComponent implements OnInit {
-  person: any;
-  job: any;
+  personData: any;
+  showAddBtn: boolean = false;
+  showEditBtn = false;
+  selectedPerson: any;
 
-  constructor(private dataServ: DataService, private jobServ: JobService) {}
+  @Output() personEvent = new EventEmitter<Data>();
+
+  constructor(private personServ: DataService) {}
 
   ngOnInit(): void {
-    this.dataServ.getAll().subscribe((data) => {
-      this.person = data;
+    this.seePerson();
+  }
+
+  seePerson(): void {
+    this.personServ.getAll().subscribe((data) => {
+      this.personData = data;
     });
-    this.jobServ.getAll().subscribe((data) => {
-      this.job = data;
+  }
+
+  addPerson(person: Data) {
+    this.personServ.create(person).subscribe((data) => {
+      this.personData.push(data);
+      this.seePerson();
     });
+  }
+
+  editPerson(person: Data) {
+    this.personServ.update(person.data_id, person).subscribe((data) => {
+      this.personData.push(data);
+      this.seePerson();
+    });
+  }
+
+  delete(id?: number) {
+    if (id != undefined) {
+      this.personServ.delete(id).subscribe(
+        (data) => {
+          this.seePerson();
+        });
+    }
+  }
+
+  add(): void {
+    this.showAddBtn = true;
+  }
+
+  edit(person: Data): void {
+    this.selectedPerson = person;
+    this.personEvent.emit(person);
+    this.showEditBtn = true;
   }
 }

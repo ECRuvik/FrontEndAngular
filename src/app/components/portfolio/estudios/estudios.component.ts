@@ -46,11 +46,7 @@ export class EstudiosComponent implements OnInit {
       this.studiesServ.delete(id).subscribe(
         (data) => {
           this.seeStudies();
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
+        });
     }
   }
 

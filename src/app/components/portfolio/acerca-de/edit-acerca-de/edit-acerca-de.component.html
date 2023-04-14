@@ -1,0 +1,75 @@
+<div class="container_modal">
+  <h1>Editar perfil</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="input_container">
+      <label> Nombre/s </label>
+      <input
+        type="text"
+        [(ngModel)]="person.name"
+        name="name"
+        [placeholder]="person.name"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Apellido/s </label>
+      <input
+        type="text"
+        [(ngModel)]="person.lastName"
+        name="lastName"
+        [placeholder]="person.lastName"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de nacimiento </label>
+      <input
+        type="date"
+        [(ngModel)]="person.birthDate"
+        name="birthDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Posición </label>
+      <input
+        type="text"
+        [(ngModel)]="person.position"
+        name="position"
+        [placeholder]="person.position"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> URL foto de perfil </label>
+      <input
+        type="text"
+        [(ngModel)]="person.url_img"
+        name="url_img"
+        [placeholder]="person.url_img"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Descripción </label>
+      <textarea
+        [(ngModel)]="person.about"
+        name="about"
+        [placeholder]="person.about"
+        required
+      ></textarea>
+    </div>
+    <div class="input_container">
+      <label> Resumen (Descripción corta) </label>
+      <textarea
+        [(ngModel)]="person.resume"
+        name="resume"
+        [placeholder]="person.resume"
+        required
+      ></textarea>
+    </div>
+    <div class="container_modal_btn">
+      <button type="submit" class="modal-accept-btn">Guardar</button>
+    </div>
+  </form>
+</div>

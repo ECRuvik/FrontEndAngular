@@ -23,8 +23,8 @@ export class AddBtnComponent implements OnInit {
 
   onSubmit(): void {
     if (
-      this.newStudy.name == '' &&
-      this.newStudy.about == '' &&
+      this.newStudy.name == '' ||
+      this.newStudy.about == '' ||
       this.newStudy.title == ''
     ) {
       alert('El estudio debe tener al menos un nombre, descripción y título.');

@@ -6,11 +6,31 @@
   </p>
 </div>
 <div class="container_stats">
-  <div class="stat" *ngFor="let abilities of abilitiesList">
+  <div class="stat" *ngFor="let skill of skillData">
     <div class="full_stat">
-      <div class="percentage" [ngStyle]="{ width: abilities.level }">
-        {{ abilities.name }} <span>{{ abilities.level }}</span>
+      <div class="percentage" [ngStyle]="{ width: skill.level + '%' }">
+        {{ skill.name }} <span>{{ skill.level }}%</span>
       </div>
     </div>
+    <button class="edit-btn" (click)="edit(skill)">
+      <i class="fa-solid fa-pencil"></i>
+    </button>
+    <button class="delete-btn" (click)="delete(skill.skill_id)">
+      <i class="fa-solid fa-trash"></i>
+    </button>
   </div>
+  <button class="add-btn" (click)="add()">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+  <app-add-habilidad
+    *ngIf="showAddBtn"
+    (onAddSkill)="addSkill($event)"
+    (closeAddBtn)="showAddBtn = false"
+  ></app-add-habilidad>
+  <app-edit-habilidad
+    *ngIf="showEditBtn"
+    [skill]="selectedSkill"
+    (onEditSkill)="editSkill($event)"
+    (closeEditBtn)="showEditBtn = false"
+  ></app-edit-habilidad>
 </div>

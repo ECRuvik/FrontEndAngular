@@ -1,5 +1,5 @@
 export class State {
-  id?: number;
+  state_id?: number;
   name: string;
 
   constructor(name: string) {

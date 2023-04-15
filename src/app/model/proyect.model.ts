@@ -1,5 +1,5 @@
 export class Proyect {
-  id?: number;
+  proyect_id?: number;
   about: string;
   endDate: Date;
   logoUrl: string;

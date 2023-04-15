@@ -31,6 +31,8 @@ import { FormsModule } from '@angular/forms';
 import { EditBtnComponent } from './components/portfolio/estudios/edit-btn/edit-btn.component';
 import { AddAcercaDeComponent } from './components/portfolio/acerca-de/add-acerca-de/add-acerca-de.component';
 import { EditAcercaDeComponent } from './components/portfolio/acerca-de/edit-acerca-de/edit-acerca-de.component';
+import { AddHabilidadComponent } from './components/portfolio/habilidades/add-habilidad/add-habilidad.component';
+import { EditHabilidadComponent } from './components/portfolio/habilidades/edit-habilidad/edit-habilidad.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { EditAcercaDeComponent } from './components/portfolio/acerca-de/edit-ace
     EditBtnComponent,
     AddAcercaDeComponent,
     EditAcercaDeComponent,
+    AddHabilidadComponent,
+    EditHabilidadComponent,
   ],
   imports: [
     BrowserModule,

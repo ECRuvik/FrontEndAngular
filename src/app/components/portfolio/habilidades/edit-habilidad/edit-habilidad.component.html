@@ -1,0 +1,23 @@
+<div class="container_modal">
+  <h1>Editar un estudio</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="input_container">
+      <label> Nombre </label>
+      <input type="text" [(ngModel)]="skill.name" name="name" required />
+    </div>
+    <div class="input_container">
+      <label> Nivel: {{ skill.level }}% </label>
+      <input
+        type="range"
+        min="0"
+        max="100"
+        [(ngModel)]="skill.level"
+        name="level"
+        required
+      />
+    </div>
+    <div class="container_modal_btn">
+      <button type="submit" class="modal-accept-btn">Guardar</button>
+    </div>
+  </form>
+</div>

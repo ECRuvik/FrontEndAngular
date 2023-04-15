@@ -33,6 +33,8 @@ export class AddAcercaDeComponent implements OnInit {
       return;
     } else {
       this.newPerson.fullName = this.newPerson.name + ' ' + this.newPerson.lastName;
+      this.newPerson.about = this.newPerson.about.replace(/\n/g, '<br>');
+      this.newPerson.resume = this.newPerson.resume.replace(/\n/g, '<br>');
       this.personServ.create(this.newPerson).subscribe((data) => {
         this.onAddPerson.emit(data);
         this.closeAddBtn.emit(true);

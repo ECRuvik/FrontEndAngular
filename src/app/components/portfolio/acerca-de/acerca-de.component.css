@@ -1,5 +1,10 @@
 /* ACERCA DE */
 
+.container_profile {
+  padding: 20px;
+  background-color: #0f0f0f;
+}
+
 .profile_card {
   width: 100%;
   padding: 10px;

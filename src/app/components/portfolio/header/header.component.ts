@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { Data } from 'src/app/model/data.model';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -7,13 +9,13 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  person: any;
+  personData: any;
 
-  constructor(private dataServ: DataService) {}
+  constructor(private personServ: DataService, private router: Router) {}
 
   ngOnInit(): void {
-    this.dataServ.getAll().subscribe((data) => {
-      this.person = data;
+    this.personServ.getAll().subscribe((data) => {
+      this.personData = data;
     });
   }
 }

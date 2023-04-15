@@ -22,7 +22,12 @@ export class EditAcercaDeComponent implements OnInit {
 
   onSubmit(): void {
     if (this.person) {
+      // Ya sé que es una mala practica guardar en mi base de datos el
+      // atributo lastName pero es para demostrar que puedo crear este
+      // tipo de código <3
       this.person.fullName = this.person.name + ' ' + this.person.lastName;
+      this.person.about = this.person.about.replace(/\n/g, '<br>');
+      this.person.resume = this.person.resume.replace(/\n/g, '<br>');
       this.personServ
         .update(this.person.data_id, this.person)
         .subscribe((data) => {

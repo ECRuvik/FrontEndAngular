@@ -1,0 +1,67 @@
+<div class="container_modal">
+  <h1>Editar una experiencia</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="input_container">
+      <label> Nombre de la experiencia </label>
+      <input
+        type="text"
+        [(ngModel)]="job.name"
+        name="name"
+        [placeholder]="job.name"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Posición </label>
+      <input
+        type="text"
+        [(ngModel)]="job.position"
+        name="position"
+        [placeholder]="job.position"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> URL del logotipo </label>
+      <input
+        type="text"
+        [(ngModel)]="job.logo_url"
+        name="logoUrl"
+        [placeholder]="job.logo_url"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de inicio </label>
+      <input
+        type="date"
+        [(ngModel)]="job.startDate"
+        name="startDate"
+        [placeholder]="job.startDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de fin </label>
+      <input
+        type="date"
+        [(ngModel)]="job.endDate"
+        name="endDate"
+        [placeholder]="job.endDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Descripción </label>
+      <textarea
+        [(ngModel)]="job.about"
+        name="about"
+        [placeholder]="job.about"
+        required
+      ></textarea>
+    </div>
+    <div class="container_modal_btn">
+      <button type="submit" class="modal-accept-btn">Guardar</button>
+    </div>
+  </form>
+</div>

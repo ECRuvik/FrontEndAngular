@@ -21,10 +21,13 @@ export class EditBtnComponent implements OnInit {
 
   constructor(private studyServ: StudyService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.study.about = this.study.about.replace(/<br>/g, '\n');
+  }
 
   onSubmit(): void {
     if (this.study) {
+      this.study.about = this.study.about.replace(/\n/g, '<br>');
       this.studyServ
         .update(this.study.study_id, this.study)
         .subscribe((data) => {

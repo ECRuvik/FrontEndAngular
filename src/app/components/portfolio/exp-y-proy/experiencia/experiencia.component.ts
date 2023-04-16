@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Job } from 'src/app/model/job.model';
 import { JobService } from 'src/app/services/job.service';
 
@@ -8,7 +8,11 @@ import { JobService } from 'src/app/services/job.service';
   styleUrls: ['./experiencia.component.css'],
 })
 export class ExperienciaComponent implements OnInit {
-  jobsList: any;
+  jobsData: any;
+  showEditBtn = false;
+  selectedJob: any;
+
+  @Output() jobEvent = new EventEmitter<Job>();
 
   constructor(private jobServ: JobService) {}
 
@@ -18,7 +22,14 @@ export class ExperienciaComponent implements OnInit {
 
   seeJobs(): void {
     this.jobServ.getAll().subscribe((data) => {
-      this.jobsList = data;
+      this.jobsData = data;
+    });
+  }
+
+  editJob(job: Job) {
+    this.jobServ.update(job.job_id, job).subscribe((data) => {
+      this.jobsData.push(data);
+      this.seeJobs();
     });
   }
 
@@ -33,5 +44,11 @@ export class ExperienciaComponent implements OnInit {
         }
       );
     }
+  }
+
+  edit(job: Job): void {
+    this.selectedJob = job;
+    this.jobEvent.emit(job);
+    this.showEditBtn = true;
   }
 }

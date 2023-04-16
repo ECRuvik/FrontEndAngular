@@ -33,6 +33,10 @@ import { AddAcercaDeComponent } from './components/portfolio/acerca-de/add-acerc
 import { EditAcercaDeComponent } from './components/portfolio/acerca-de/edit-acerca-de/edit-acerca-de.component';
 import { AddHabilidadComponent } from './components/portfolio/habilidades/add-habilidad/add-habilidad.component';
 import { EditHabilidadComponent } from './components/portfolio/habilidades/edit-habilidad/edit-habilidad.component';
+import { EditExperienciaComponent } from './components/portfolio/exp-y-proy/experiencia/edit-experiencia/edit-experiencia.component';
+import { AddExperienciaComponent } from './components/portfolio/exp-y-proy/experiencia/add-experiencia/add-experiencia.component';
+import { AddProyectoComponent } from './components/portfolio/exp-y-proy/proyectos/add-proyecto/add-proyecto.component';
+import { EditProyectoComponent } from './components/portfolio/exp-y-proy/proyectos/edit-proyecto/edit-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +57,10 @@ import { EditHabilidadComponent } from './components/portfolio/habilidades/edit-
     EditAcercaDeComponent,
     AddHabilidadComponent,
     EditHabilidadComponent,
+    EditExperienciaComponent,
+    AddExperienciaComponent,
+    AddProyectoComponent,
+    EditProyectoComponent,
   ],
   imports: [
     BrowserModule,

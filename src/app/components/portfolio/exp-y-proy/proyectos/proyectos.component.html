@@ -1,15 +1,23 @@
-<div class="box_proy" *ngFor="let proyects of proyectList">
+<div class="box_proy" *ngFor="let proyect of proyectData">
   <div class="proy_img">
-    <img [src]="proyects.logoUrl" alt="" />
+    <img [src]="proyect.logo_url" alt="" />
   </div>
   <div class="proy_desc">
-    <h4>
-      {{ proyects.name }} | {{ proyects.status }} {{ proyects.startDate }}-{{
-        proyects.endDate
-      }}
-      | {{ proyects.type }}.
-    </h4>
-    <p>{{ proyects.about }}</p>
-    <a href="{{ proyects.url }}" class="btn btn-success">Ver más</a>
+    <h3>{{ proyect.name }} | {{ proyect.status }} | {{ proyect.type }}.</h3>
+    <h5>Desde: {{ proyect.startDate }} | Hasta: {{ proyect.endDate }}</h5>
+    <p>{{ proyect.about }}</p>
+    <a [href]="proyect.url" class="btn btn-success">Ver más</a>
+    <button class="edit-btn" (click)="edit(proyect)">
+      <i class="fa-solid fa-pencil"></i>
+    </button>
+    <button class="delete-btn" (click)="delete(proyect.proyect_id)">
+      <i class="fa-solid fa-trash"></i>
+    </button>
   </div>
+  <app-edit-proyecto
+    *ngIf="showEditBtn"
+    [proy]="selectedProy"
+    (onEditProy)="editProyect($event)"
+    (closeEditBtn)="showEditBtn = false"
+  ></app-edit-proyecto>
 </div>

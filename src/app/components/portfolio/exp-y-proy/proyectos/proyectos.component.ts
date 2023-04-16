@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Proyect } from 'src/app/model/proyect.model';
 import { ProyectService } from 'src/app/services/proyect.service';
 
 @Component({
@@ -7,13 +8,47 @@ import { ProyectService } from 'src/app/services/proyect.service';
   styleUrls: ['./proyectos.component.css'],
 })
 export class ProyectosComponent implements OnInit {
-  proyectList: any;
+  proyectData: any;
+  showEditBtn = false;
+  selectedProy: any;
 
-  constructor(private proyectServ: ProyectService) {}
+  @Output() proyEvent = new EventEmitter<Proyect>();
+
+  constructor(private proyServ: ProyectService) {}
 
   ngOnInit(): void {
-    this.proyectServ.getAll().subscribe((data) => {
-      this.proyectList = data;
+    this.seeProyects();
+  }
+
+  seeProyects(): void {
+    this.proyServ.getAll().subscribe((data) => {
+      this.proyectData = data;
     });
+  }
+
+  editProyect(proy: Proyect) {
+    this.proyServ.update(proy.proyect_id, proy).subscribe((data) => {
+      this.proyectData.push(data);
+      this.seeProyects();
+    });
+  }
+
+  delete(id?: number) {
+    if (id != undefined) {
+      this.proyServ.delete(id).subscribe(
+        (data) => {
+          this.seeProyects();
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    }
+  }
+
+  edit(proy: Proyect): void {
+    this.selectedProy = proy;
+    this.proyEvent.emit(proy);
+    this.showEditBtn = true;
   }
 }

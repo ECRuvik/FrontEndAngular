@@ -14,7 +14,10 @@ export class EditAcercaDeComponent implements OnInit {
 
   constructor(private personServ: DataService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.person.about = this.person.about.replace(/<br>/g, '\n');
+    this.person.resume = this.person.resume.replace(/<br>/g, '\n');
+  }
 
   close(): void {
     this.closeEditBtn.emit(true);

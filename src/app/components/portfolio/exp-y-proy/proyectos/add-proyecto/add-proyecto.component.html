@@ -1,0 +1,80 @@
+<div class="container_modal">
+  <h1>Agregar un nuevo proyecto</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="input_container">
+      <label> Nombre del proyecto </label>
+      <input type="text" [(ngModel)]="newProy.name" name="name" required />
+    </div>
+    <div class="input_container">
+      <label> Posición </label>
+      <input
+        type="text"
+        [(ngModel)]="newProy.position"
+        name="position"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Estado </label>
+      <input
+        type="text"
+        [(ngModel)]="newProy.status"
+        name="status"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Tipo de proyecto </label>
+      <input
+        type="text"
+        [(ngModel)]="newProy.type"
+        name="type"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> URL del proyecto </label>
+      <input
+        type="text"
+        [(ngModel)]="newProy.url"
+        name="url"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> URL del logotipo </label>
+      <input
+        type="text"
+        [(ngModel)]="newProy.logo_url"
+        name="logo_url"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de inicio </label>
+      <input
+        type="date"
+        [(ngModel)]="newProy.startDate"
+        name="startDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de fin </label>
+      <input
+        type="date"
+        [(ngModel)]="newProy.endDate"
+        name="endDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Descripción </label>
+      <textarea [(ngModel)]="newProy.about" name="about" required></textarea>
+    </div>
+    <div class="container_modal_btn">
+      <button class="modal-cancel-btn" (click)="close()">Cancelar</button>
+      <button type="submit" class="modal-accept-btn">Guardar</button>
+    </div>
+  </form>
+</div>

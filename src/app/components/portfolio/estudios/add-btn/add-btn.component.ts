@@ -30,6 +30,7 @@ export class AddBtnComponent implements OnInit {
       alert('El estudio debe tener al menos un nombre, descripción y título.');
       return;
     }
+    this.newStudy.about = this.newStudy.about.replace(/\n/g, '<br>');
     this.studyServ.create(this.newStudy).subscribe((data) => {
       this.onAddStudy.emit(data);
       this.closeAddBtn.emit(true);

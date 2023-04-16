@@ -43,10 +43,9 @@ export class AcercaDeComponent implements OnInit {
 
   delete(id?: number) {
     if (id != undefined) {
-      this.personServ.delete(id).subscribe(
-        (data) => {
-          this.seePerson();
-        });
+      this.personServ.delete(id).subscribe((data) => {
+        this.seePerson();
+      });
     }
   }
 

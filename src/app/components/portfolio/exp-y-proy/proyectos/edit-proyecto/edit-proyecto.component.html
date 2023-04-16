@@ -1,0 +1,97 @@
+<div class="container_modal">
+  <h1>Editar una experiencia</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="input_container">
+      <label> Nombre del proyecto </label>
+      <input
+        type="text"
+        [(ngModel)]="proy.name"
+        name="name"
+        [placeholder]="proy.name"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Posición </label>
+      <input
+        type="text"
+        [(ngModel)]="proy.position"
+        name="position"
+        [placeholder]="proy.position"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Estado </label>
+      <input
+        type="text"
+        [(ngModel)]="proy.status"
+        name="status"
+        [placeholder]="proy.status"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Tipo de proyecto </label>
+      <input
+        type="text"
+        [(ngModel)]="proy.type"
+        name="type"
+        [placeholder]="proy.type"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> URL del proyecto </label>
+      <input
+        type="text"
+        [(ngModel)]="proy.url"
+        name="url"
+        [placeholder]="proy.url"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> URL del logotipo </label>
+      <input
+        type="text"
+        [(ngModel)]="proy.logo_url"
+        name="logo_url"
+        [placeholder]="proy.logo_url"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de inicio </label>
+      <input
+        type="date"
+        [(ngModel)]="proy.startDate"
+        name="startDate"
+        [placeholder]="proy.startDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de fin </label>
+      <input
+        type="date"
+        [(ngModel)]="proy.endDate"
+        name="endDate"
+        [placeholder]="proy.endDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Descripción </label>
+      <textarea
+        [(ngModel)]="proy.about"
+        name="about"
+        [placeholder]="proy.about"
+        required
+      ></textarea>
+    </div>
+    <div class="container_modal_btn">
+      <button type="submit" class="modal-accept-btn">Guardar</button>
+    </div>
+  </form>
+</div>

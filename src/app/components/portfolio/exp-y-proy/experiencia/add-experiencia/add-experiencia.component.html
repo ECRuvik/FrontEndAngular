@@ -1,0 +1,53 @@
+<div class="container_modal">
+  <h1>Agregar una nueva experiencia</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="input_container">
+      <label> Nombre de la experiencia </label>
+      <input type="text" [(ngModel)]="newJob.name" name="name" required />
+    </div>
+    <div class="input_container">
+      <label> Posición </label>
+      <input
+        type="text"
+        [(ngModel)]="newJob.position"
+        name="position"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> URL del logotipo </label>
+      <input
+        type="text"
+        [(ngModel)]="newJob.logo_url"
+        name="logo_url"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de inicio </label>
+      <input
+        type="date"
+        [(ngModel)]="newJob.startDate"
+        name="startDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Fecha de fin </label>
+      <input
+        type="date"
+        [(ngModel)]="newJob.endDate"
+        name="endDate"
+        required
+      />
+    </div>
+    <div class="input_container">
+      <label> Descripción </label>
+      <textarea [(ngModel)]="newJob.about" name="about" required></textarea>
+    </div>
+    <div class="container_modal_btn">
+      <button class="modal-cancel-btn" (click)="close()">Cancelar</button>
+      <button type="submit" class="modal-accept-btn">Guardar</button>
+    </div>
+  </form>
+</div>

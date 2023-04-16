@@ -23,8 +23,12 @@
   margin: 50px;
 }
 
-.exp_desc h4 {
+.exp_desc h3 {
   color: #90ffff;
+}
+
+.exp_desc h5 {
+  color: #589c9c;
 }
 
 @media (max-width: 500px) {

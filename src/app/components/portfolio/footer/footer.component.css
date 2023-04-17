@@ -1,0 +1,25 @@
+.container_footer {
+  width: 100%;
+  padding: 30px;
+  background-color: #0f0f0f;
+}
+
+.info_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.item_box i {
+  padding: 6px;
+  font-size: 22px;
+}
+
+.item_box a {
+  font-size: 20px;
+  transition: .2s;
+}
+
+.item_box a:hover {
+  color: #00ffff;
+}

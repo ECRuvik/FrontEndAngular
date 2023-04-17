@@ -35,14 +35,18 @@ export class ProyectosComponent implements OnInit {
 
   delete(id?: number) {
     if (id != undefined) {
-      this.proyServ.delete(id).subscribe(
-        (data) => {
-          this.seeProyects();
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
+      if (window.confirm('¿Estas seguro que deseas borrar este elemento?')) {
+        this.proyServ.delete(id).subscribe(
+          (data) => {
+            this.seeProyects();
+          },
+          (err) => {
+            console.log(err);
+          }
+        );
+      } else {
+        return;
+      }
     }
   }
 

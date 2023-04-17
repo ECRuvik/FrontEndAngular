@@ -37,6 +37,7 @@ import { EditExperienciaComponent } from './components/portfolio/exp-y-proy/expe
 import { AddExperienciaComponent } from './components/portfolio/exp-y-proy/experiencia/add-experiencia/add-experiencia.component';
 import { AddProyectoComponent } from './components/portfolio/exp-y-proy/proyectos/add-proyecto/add-proyecto.component';
 import { EditProyectoComponent } from './components/portfolio/exp-y-proy/proyectos/edit-proyecto/edit-proyecto.component';
+import { FooterComponent } from './components/portfolio/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { EditProyectoComponent } from './components/portfolio/exp-y-proy/proyect
     AddExperienciaComponent,
     AddProyectoComponent,
     EditProyectoComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

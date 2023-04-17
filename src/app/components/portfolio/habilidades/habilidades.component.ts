@@ -43,10 +43,13 @@ export class HabilidadesComponent implements OnInit {
 
   delete(id?: number) {
     if (id != undefined) {
-      this.skillServ.delete(id).subscribe(
-        (data) => {
+      if (window.confirm('¿Estas seguro que deseas borrar este elemento?')) {
+        this.skillServ.delete(id).subscribe((data) => {
           this.seeSkill();
         });
+      } else {
+        return;
+      }
     }
   }
 

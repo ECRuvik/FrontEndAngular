@@ -43,10 +43,15 @@ export class EstudiosComponent implements OnInit {
 
   delete(id?: number) {
     if (id != undefined) {
-      this.studiesServ.delete(id).subscribe(
-        (data) => {
+      // No creé un modal ya que me pareció uso de código innecesario
+      // sabiendo que ya demostré saber crear modales.
+      if (window.confirm('¿Estas seguro que deseas borrar este elemento?')) {
+        this.studiesServ.delete(id).subscribe((data) => {
           this.seeStudies();
         });
+      } else {
+        return;
+      }
     }
   }
 

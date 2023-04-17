@@ -35,14 +35,18 @@ export class ExperienciaComponent implements OnInit {
 
   delete(id?: number) {
     if (id != undefined) {
-      this.jobServ.delete(id).subscribe(
-        (data) => {
-          this.seeJobs();
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
+      if (window.confirm('¿Estas seguro que deseas borrar este elemento?')) {
+        this.jobServ.delete(id).subscribe(
+          (data) => {
+            this.seeJobs();
+          },
+          (err) => {
+            console.log(err);
+          }
+        );
+      } else {
+        return;
+      }
     }
   }
 

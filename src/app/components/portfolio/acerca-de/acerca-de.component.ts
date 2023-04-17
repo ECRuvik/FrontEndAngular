@@ -43,9 +43,13 @@ export class AcercaDeComponent implements OnInit {
 
   delete(id?: number) {
     if (id != undefined) {
-      this.personServ.delete(id).subscribe((data) => {
-        this.seePerson();
-      });
+      if (window.confirm('¿Estas seguro que deseas borrar este elemento?')) {
+        this.personServ.delete(id).subscribe((data) => {
+          this.seePerson();
+        });
+      } else {
+        return;
+      }
     }
   }
 

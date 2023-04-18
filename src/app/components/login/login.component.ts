@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/model/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -32,12 +33,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(event: Event) {
-    this.authService
-      .login(this.form.value)
-      .then((response) => {
-        this.router.navigate(['/portfolio']);
-      })
-      .catch((error) => console.log(error));
+    event.preventDefault();
+    const isAuthenticated = this.authService.authenticate(this.form.value);
+    if (isAuthenticated) {
+      this.router.navigate(['/portfolio']);
+    } else {
+      alert('Credenciales incorrectas.');
+    }
   }
 
   get Email() {

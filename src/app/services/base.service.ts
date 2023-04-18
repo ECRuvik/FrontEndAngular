@@ -10,7 +10,7 @@ export abstract class BaseService<T> {
   }
 
   getById(id: number): Observable<T> {
-    return this.http.get<T>(this.baseUrl + this.url + '/' + id);
+    return this.http.get<T>(this.baseUrl + this.url + '/id/' + id);
   }
 
   create(item: T): Observable<T> {

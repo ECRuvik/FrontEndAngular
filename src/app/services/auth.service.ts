@@ -1,17 +1,38 @@
-import { Injectable } from '@angular/core';
-import { Auth, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, OnInit } from '@angular/core';
+import { User } from '../model/user.model';
+import { Router } from '@angular/router';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private auth: Auth) {}
+  adminUser: any;
 
-  login({ email, password }: any) {
-    return signInWithEmailAndPassword(this.auth, email, password);
+  constructor(private userServ: UserService) {
+    this.getAdmin();
   }
 
-  logout() {
-    return signOut(this.auth);
+  getAdmin(): void {
+    this.userServ.getById(1).subscribe((data) => {
+      this.adminUser = data;
+    });
+  }
+
+  authenticate(credentials: User): boolean {
+    const verifiedUser =
+      credentials.email == this.adminUser.email &&
+      credentials.password == this.adminUser.password;
+    if (verifiedUser) {
+      localStorage.setItem('loggedUser', 'true');
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  logout(): void {
+    localStorage.removeItem('loggedUser');
   }
 }

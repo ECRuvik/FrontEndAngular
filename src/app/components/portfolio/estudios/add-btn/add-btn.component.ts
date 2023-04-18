@@ -31,6 +31,10 @@ export class AddBtnComponent implements OnInit {
       return;
     }
     this.newStudy.about = this.newStudy.about.replace(/\n/g, '<br>');
+    if (this.newStudy.logo_url == '') {
+      this.newStudy.logo_url =
+        'https://cdn-icons-png.flaticon.com/512/85/85488.png';
+    }
     this.studyServ.create(this.newStudy).subscribe((data) => {
       this.onAddStudy.emit(data);
       this.closeAddBtn.emit(true);

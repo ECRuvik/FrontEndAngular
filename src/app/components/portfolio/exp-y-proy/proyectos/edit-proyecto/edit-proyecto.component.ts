@@ -20,6 +20,10 @@ export class EditProyectoComponent implements OnInit {
   onSubmit(): void {
     if (this.proy) {
       this.proy.about = this.proy.about.replace(/\n/g, '<br>');
+      if (this.proy.logo_url == '') {
+        this.proy.logo_url =
+          'https://cdn-icons-png.flaticon.com/512/85/85488.png';
+      }
       this.proyServ
         .update(this.proy.proyect_id, this.proy)
         .subscribe((data) => {

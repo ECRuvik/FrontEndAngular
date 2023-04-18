@@ -21,6 +21,10 @@ export class EditExperienciaComponent implements OnInit {
   onSubmit(): void {
     if (this.job) {
       this.job.about = this.job.about.replace(/\n/g, '<br>');
+      if (this.job.logo_url == '') {
+        this.job.logo_url =
+          'https://cdn-icons-png.flaticon.com/512/85/85488.png';
+      }
       this.jobServ.update(this.job.job_id, this.job).subscribe((data) => {
         this.onEditJob.emit(data);
         this.closeEditBtn.emit(true);

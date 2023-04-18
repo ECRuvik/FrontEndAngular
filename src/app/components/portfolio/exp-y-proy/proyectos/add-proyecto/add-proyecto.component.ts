@@ -32,6 +32,10 @@ export class AddProyectoComponent implements OnInit {
       return;
     }
     this.newProy.about = this.newProy.about.replace(/\n/g, '<br>');
+    if (this.newProy.logo_url == '') {
+      this.newProy.logo_url =
+        'https://cdn-icons-png.flaticon.com/512/85/85488.png';
+    }
     this.proyServ.create(this.newProy).subscribe((data) => {
       this.onAddProy.emit(data);
       this.closeAddProyBtn.emit(true);

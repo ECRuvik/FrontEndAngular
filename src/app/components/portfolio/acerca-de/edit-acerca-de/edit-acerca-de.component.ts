@@ -31,6 +31,10 @@ export class EditAcercaDeComponent implements OnInit {
       this.person.fullName = this.person.name + ' ' + this.person.lastName;
       this.person.about = this.person.about.replace(/\n/g, '<br>');
       this.person.resume = this.person.resume.replace(/\n/g, '<br>');
+      if (this.person.url_img == '') {
+        this.person.url_img =
+          'https://cdn-icons-png.flaticon.com/512/85/85488.png';
+      }
       this.personServ
         .update(this.person.data_id, this.person)
         .subscribe((data) => {

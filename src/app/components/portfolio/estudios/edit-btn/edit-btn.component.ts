@@ -28,6 +28,10 @@ export class EditBtnComponent implements OnInit {
   onSubmit(): void {
     if (this.study) {
       this.study.about = this.study.about.replace(/\n/g, '<br>');
+      if (this.study.logo_url == '') {
+        this.study.logo_url =
+          'https://cdn-icons-png.flaticon.com/512/85/85488.png';
+      }
       this.studyServ
         .update(this.study.study_id, this.study)
         .subscribe((data) => {

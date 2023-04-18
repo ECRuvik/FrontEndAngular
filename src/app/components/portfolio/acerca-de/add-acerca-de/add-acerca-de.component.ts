@@ -26,15 +26,19 @@ export class AddAcercaDeComponent implements OnInit {
       this.newPerson.name == '' ||
       this.newPerson.lastName == '' ||
       this.newPerson.position == '' ||
-      this.newPerson.about == '' ||
-      this.newPerson.url_img == ''
+      this.newPerson.about == ''
     ) {
       alert('Por favor, completa todos los campos.');
       return;
     } else {
-      this.newPerson.fullName = this.newPerson.name + ' ' + this.newPerson.lastName;
+      this.newPerson.fullName =
+        this.newPerson.name + ' ' + this.newPerson.lastName;
       this.newPerson.about = this.newPerson.about.replace(/\n/g, '<br>');
       this.newPerson.resume = this.newPerson.resume.replace(/\n/g, '<br>');
+      if (this.newPerson.url_img == '') {
+        this.newPerson.url_img =
+          'https://cdn-icons-png.flaticon.com/512/85/85488.png';
+      }
       this.personServ.create(this.newPerson).subscribe((data) => {
         this.onAddPerson.emit(data);
         this.closeAddBtn.emit(true);

@@ -33,6 +33,10 @@ export class AddExperienciaComponent implements OnInit {
       return;
     }
     this.newJob.about = this.newJob.about.replace(/\n/g, '<br>');
+    if (this.newJob.logo_url == '') {
+      this.newJob.logo_url =
+        'https://cdn-icons-png.flaticon.com/512/85/85488.png';
+    }
     this.jobServ.create(this.newJob).subscribe((data) => {
       this.onAddJob.emit(data);
       this.closeAddExpBtn.emit(true);

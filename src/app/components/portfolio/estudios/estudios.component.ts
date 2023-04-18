@@ -8,6 +8,7 @@ import { StudyService } from 'src/app/services/study.service';
   styleUrls: ['./estudios.component.css'],
 })
 export class EstudiosComponent implements OnInit {
+  logged = false;
   studiesData: any;
   showAddBtn = false;
   showEditBtn = false;
@@ -15,7 +16,14 @@ export class EstudiosComponent implements OnInit {
 
   @Output() studyEvent = new EventEmitter<Study>();
 
-  constructor(private studiesServ: StudyService) {}
+  constructor(private studiesServ: StudyService) {
+    const authenticated = localStorage.getItem('loggedUser');
+    if (authenticated && authenticated === 'true') {
+      this.logged = true;
+    } else {
+      this.logged = false;
+    }
+  }
 
   ngOnInit(): void {
     this.seeStudies();

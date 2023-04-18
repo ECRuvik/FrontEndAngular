@@ -8,13 +8,21 @@ import { JobService } from 'src/app/services/job.service';
   styleUrls: ['./experiencia.component.css'],
 })
 export class ExperienciaComponent implements OnInit {
+  logged = false;
   jobsData: any;
   showEditBtn = false;
   selectedJob: any;
 
   @Output() jobEvent = new EventEmitter<Job>();
 
-  constructor(private jobServ: JobService) {}
+  constructor(private jobServ: JobService) {
+    const authenticated = localStorage.getItem('loggedUser');
+    if (authenticated && authenticated === 'true') {
+      this.logged = true;
+    } else {
+      this.logged = false;
+    }
+  }
 
   ngOnInit(): void {
     this.seeJobs();

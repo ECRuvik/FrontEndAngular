@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.logout();
+  }
 
   onSubmit(event: Event) {
     event.preventDefault();

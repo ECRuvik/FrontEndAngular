@@ -2,7 +2,7 @@
   <div class="container_box">
     <h3>Proyectos en los que he formado parte.</h3>
     <app-proyectos></app-proyectos>
-    <button class="add-btn" (click)="openAddProy()">
+    <button class="add-btn" *ngIf="logged" (click)="openAddProy()">
       <i class="fa-solid fa-plus"></i>
     </button>
     <app-add-proyecto
@@ -14,7 +14,7 @@
   <div class="container_box">
     <h3>Experiencia Laboral</h3>
     <app-experiencia></app-experiencia>
-    <button class="add-btn" (click)="openAddExp()">
+    <button class="add-btn" *ngIf="logged" (click)="openAddExp()">
       <i class="fa-solid fa-plus"></i>
     </button>
     <app-add-experiencia

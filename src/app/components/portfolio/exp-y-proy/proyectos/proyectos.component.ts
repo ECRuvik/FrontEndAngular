@@ -8,13 +8,21 @@ import { ProyectService } from 'src/app/services/proyect.service';
   styleUrls: ['./proyectos.component.css'],
 })
 export class ProyectosComponent implements OnInit {
+  logged = false;
   proyectData: any;
   showEditBtn = false;
   selectedProy: any;
 
   @Output() proyEvent = new EventEmitter<Proyect>();
 
-  constructor(private proyServ: ProyectService) {}
+  constructor(private proyServ: ProyectService) {
+    const authenticated = localStorage.getItem('loggedUser');
+    if (authenticated && authenticated === 'true') {
+      this.logged = true;
+    } else {
+      this.logged = false;
+    }
+  }
 
   ngOnInit(): void {
     this.seeProyects();

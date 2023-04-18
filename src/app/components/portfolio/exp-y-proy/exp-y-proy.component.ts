@@ -10,12 +10,20 @@ import { ProyectService } from 'src/app/services/proyect.service';
   styleUrls: ['./exp-y-proy.component.css'],
 })
 export class ExpYProyComponent {
+  logged = false;
   jobsData: any;
   proyData: any;
   showAddExpBtn = false;
   showAddProyBtn = false;
 
-  constructor(private jobServ: JobService, private proyServ: ProyectService) {}
+  constructor(private jobServ: JobService, private proyServ: ProyectService) {
+    const authenticated = localStorage.getItem('loggedUser');
+    if (authenticated && authenticated === 'true') {
+      this.logged = true;
+    } else {
+      this.logged = false;
+    }
+  }
 
   ngOnInit(): void {}
 

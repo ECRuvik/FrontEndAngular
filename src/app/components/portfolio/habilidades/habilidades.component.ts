@@ -8,6 +8,7 @@ import { SkillService } from 'src/app/services/skill.service';
   styleUrls: ['./habilidades.component.css'],
 })
 export class HabilidadesComponent implements OnInit {
+  logged = false;
   skillData: any;
   showAddBtn = false;
   showEditBtn = false;
@@ -15,7 +16,14 @@ export class HabilidadesComponent implements OnInit {
 
   @Output() skillEvent = new EventEmitter<Skill>();
 
-  constructor(private skillServ: SkillService) {}
+  constructor(private skillServ: SkillService) {
+    const authenticated = localStorage.getItem('loggedUser');
+    if (authenticated && authenticated === 'true') {
+      this.logged = true;
+    } else {
+      this.logged = false;
+    }
+  }
 
   ngOnInit(): void {
     this.seeSkill();

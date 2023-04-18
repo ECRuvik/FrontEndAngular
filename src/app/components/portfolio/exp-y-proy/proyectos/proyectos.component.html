@@ -7,10 +7,10 @@
     <h5>Desde: {{ proyect.startDate }} | Hasta: {{ proyect.endDate }}</h5>
     <p>{{ proyect.about }}</p>
     <a [href]="proyect.url" class="btn btn-success">Ver más</a>
-    <button class="edit-btn" (click)="edit(proyect)">
+    <button class="edit-btn" *ngIf="logged" (click)="edit(proyect)">
       <i class="fa-solid fa-pencil"></i>
     </button>
-    <button class="delete-btn" (click)="delete(proyect.proyect_id)">
+    <button class="delete-btn" *ngIf="logged" (click)="delete(proyect.proyect_id)">
       <i class="fa-solid fa-trash"></i>
     </button>
   </div>

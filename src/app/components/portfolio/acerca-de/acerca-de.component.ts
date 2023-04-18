@@ -8,6 +8,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./acerca-de.component.css'],
 })
 export class AcercaDeComponent implements OnInit {
+  logged = false;
   personData: any;
   showAddBtn: boolean = false;
   showEditBtn = false;
@@ -15,7 +16,14 @@ export class AcercaDeComponent implements OnInit {
 
   @Output() personEvent = new EventEmitter<Data>();
 
-  constructor(private personServ: DataService) {}
+  constructor(private personServ: DataService) {
+    const authenticated = localStorage.getItem('loggedUser');
+    if (authenticated && authenticated === 'true') {
+      this.logged = true;
+    } else {
+      this.logged = false;
+    }
+  }
 
   ngOnInit(): void {
     this.seePerson();

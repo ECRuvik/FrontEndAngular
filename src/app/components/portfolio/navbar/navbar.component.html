@@ -8,7 +8,8 @@
     <ul class="nav-menu"></ul>
     <ul class="nav-menu-right">
       <i class="fa fa-user-circle" aria-hidden="true" id="user-icon"></i>
-      <a href="/login" id="miusuario">Mi Usuario</a>
+      <a href="/login" *ngIf="!logged" id="miusuario">Iniciar Sesión</a>
+      <a href="/portfolio" *ngIf="logged" (click)="logout()">Cerrar Sesión</a>
     </ul>
   </nav>
 </div>

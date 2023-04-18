@@ -9,9 +9,17 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  logged = false;
   personData: any;
 
-  constructor(private personServ: DataService, private router: Router) {}
+  constructor(private personServ: DataService, private router: Router) {
+    const authenticated = localStorage.getItem('loggedUser');
+    if (authenticated && authenticated === 'true') {
+      this.logged = true;
+    } else {
+      this.logged = false;
+    }
+  }
 
   ngOnInit(): void {
     this.personServ.getAll().subscribe((data) => {

@@ -26,4 +26,9 @@ export class HeaderComponent implements OnInit {
       this.personData = data;
     });
   }
+
+  scrollTo(componentId: string): void {
+    const element = document.getElementById(componentId);
+    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }

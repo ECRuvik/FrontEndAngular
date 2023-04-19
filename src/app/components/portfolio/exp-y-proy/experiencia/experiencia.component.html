@@ -6,12 +6,14 @@
     <h3>{{ jobs.name }} | {{ jobs.position }}</h3>
     <h5>Desde: {{ jobs.startDate }} | Hasta: {{ jobs.endDate }}</h5>
     <p>{{ jobs.about }}</p>
-    <button class="edit-btn" *ngIf="logged" (click)="edit(jobs)">
-      <i class="fa-solid fa-pencil"></i>
-    </button>
-    <button class="delete-btn" *ngIf="logged" (click)="delete(jobs.job_id)">
-      <i class="fa-solid fa-trash"></i>
-    </button>
+    <div class="box_crud" *ngIf="logged">
+      <button class="edit-btn" (click)="edit(jobs)">
+        <i class="fa-solid fa-pencil"></i>
+      </button>
+      <button class="delete-btn" (click)="delete(jobs.job_id)">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
   </div>
   <app-edit-experiencia
     *ngIf="showEditBtn"

@@ -10,16 +10,20 @@
       <h6>Desde: {{ studies.startDate }} | Hasta: {{ studies.endDate }}.</h6>
       <p [innerHTML]="studies.about"></p>
     </div>
-    <button class="edit-btn" *ngIf="logged" (click)="edit(studies)">
-      <i class="fa-solid fa-pencil"></i>
-    </button>
-    <button class="delete-btn" *ngIf="logged" (click)="delete(studies.study_id)">
-      <i class="fa-solid fa-trash"></i>
+    <div class="box_crud" *ngIf="logged">
+      <button class="edit-btn" (click)="edit(studies)">
+        <i class="fa-solid fa-pencil"></i>
+      </button>
+      <button class="delete-btn" (click)="delete(studies.study_id)">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
+  </div>
+  <div class="box_crud" *ngIf="logged">
+    <button class="add-btn" (click)="add()">
+      <i class="fa-solid fa-plus"></i>
     </button>
   </div>
-  <button class="add-btn" *ngIf="logged" (click)="add()">
-    <i class="fa-solid fa-plus"></i>
-  </button>
   <app-add-btn
     *ngIf="showAddBtn"
     (onAddStudy)="addStudy($event)"

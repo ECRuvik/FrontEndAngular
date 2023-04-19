@@ -2,9 +2,11 @@
   <div class="container_box">
     <h3>Proyectos en los que he formado parte.</h3>
     <app-proyectos></app-proyectos>
-    <button class="add-btn" *ngIf="logged" (click)="openAddProy()">
-      <i class="fa-solid fa-plus"></i>
-    </button>
+    <div class="box_crud" *ngIf="logged">
+      <button class="add-btn" (click)="openAddProy()">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
     <app-add-proyecto
       *ngIf="showAddProyBtn"
       (onAddProy)="addProy($event)"
@@ -14,9 +16,11 @@
   <div class="container_box">
     <h3>Experiencia Laboral</h3>
     <app-experiencia></app-experiencia>
-    <button class="add-btn" *ngIf="logged" (click)="openAddExp()">
-      <i class="fa-solid fa-plus"></i>
-    </button>
+    <div class="box_crud" *ngIf="logged">
+      <button class="add-btn" (click)="openAddExp()">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
     <app-add-experiencia
       *ngIf="showAddExpBtn"
       (onAddJob)="addJob($event)"

@@ -1,4 +1,4 @@
-<div href="#" (click)="scrollTo('saber_mas')" class="header">
+<div class="header">
   <div class="top_left_header">
     <h1>{{ personData[0].fullName }}</h1>
     <h2>{{ personData[0].position }}</h2>
@@ -10,6 +10,6 @@
     <p [innerHTML]="personData[0].resume"></p>
   </div>
   <div class="bot_right_header">
-    <a class="btn btn-info">Saber más...</a>
+    <a (click)="scrollTo('saber_mas')" class="btn btn-info">Saber más...</a>
   </div>
 </div>

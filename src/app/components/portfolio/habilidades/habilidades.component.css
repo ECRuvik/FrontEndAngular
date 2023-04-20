@@ -1,4 +1,10 @@
+.container_abilities {
+  display: flex;
+  justify-content: center;
+}
+
 .container_about {
+  width: 40%;
   padding: 20px;
   margin: 10px;
   text-align: center;
@@ -10,6 +16,7 @@
 }
 
 .container_stats {
+  width: 60%;
   padding: 20px;
   margin: 10px;
   display: grid;
@@ -36,4 +43,13 @@
 .percentage {
   padding: 4px;
   background-color: #00ffff;
+}
+
+@media (max-width: 768px) {
+  .container_abilities {
+    display: block;
+  }
+  .container_about, .container_stats {
+    width: 100%;
+  }
 }

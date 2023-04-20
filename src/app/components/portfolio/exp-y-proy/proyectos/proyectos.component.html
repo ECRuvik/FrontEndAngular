@@ -6,7 +6,7 @@
     <h3>{{ proyect.name }} | {{ proyect.status }} | {{ proyect.type }}.</h3>
     <h5>Desde: {{ proyect.startDate }} | Hasta: {{ proyect.endDate }}</h5>
     <p>{{ proyect.about }}</p>
-    <a [href]="proyect.url" class="btn btn-success">Ver más</a>
+    <a [href]="proyect.url" target="_blank" class="btn btn-success">Ver más</a>
     <div class="box_crud" *ngIf="logged">
       <button class="edit-btn" (click)="edit(proyect)">
         <i class="fa-solid fa-pencil"></i>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Skill } from 'src/app/model/skill.model';
 import { SkillService } from 'src/app/services/skill.service';
 

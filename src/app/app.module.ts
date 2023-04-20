@@ -16,7 +16,6 @@ import { LoginComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { DataService } from './services/data.service';
 import { StudyService } from './services/study.service';
@@ -69,7 +68,6 @@ import { FooterComponent } from './components/portfolio/footer/footer.component'
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
   ],
   providers: [
     DataService,

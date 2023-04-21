@@ -3,26 +3,24 @@
   justify-content: center;
 }
 
-.container_about {
-  width: 40%;
-  padding: 20px;
-  margin: 10px;
+.container_stats h2 {
   text-align: center;
-  background-color: #101010;
-}
-
-.container_about h2 {
   color: #00ffff;
 }
 
+.container_stats p {
+  text-align: center;
+}
+
 .container_stats {
-  width: 60%;
+  width: 90%;
   padding: 20px;
   margin: 10px;
   display: grid;
   gap: 10px 20px;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 460px), 1fr));
   background-color: #101010;
+  border: 1px solid #00ffff;
 }
 
 .stat {

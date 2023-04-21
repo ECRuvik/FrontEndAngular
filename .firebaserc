@@ -1,14 +1,5 @@
 {
   "projects": {
     "default": "portfolio-ecruvik"
-  },
-  "targets": {
-    "portfolio-ecruvik": {
-      "hosting": {
-        "portfolio": [
-          "portfolio-ecruvik"
-        ]
-      }
-    }
   }
 }

@@ -16,8 +16,6 @@ import { ProyectosComponent } from './components/portfolio/exp-y-proy/proyectos/
 import { LoginComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { provideAuth, getAuth } from '@angular/fire/auth';
 import { DataService } from './services/data.service';
 import { StudyService } from './services/study.service';
 import { StateService } from './services/state.service';
@@ -37,6 +35,7 @@ import { AddExperienciaComponent } from './components/portfolio/exp-y-proy/exper
 import { AddProyectoComponent } from './components/portfolio/exp-y-proy/proyectos/add-proyecto/add-proyecto.component';
 import { EditProyectoComponent } from './components/portfolio/exp-y-proy/proyectos/edit-proyecto/edit-proyecto.component';
 import { FooterComponent } from './components/portfolio/footer/footer.component';
+import { BaseService } from './services/base.service';
 
 @NgModule({
   declarations: [
@@ -64,12 +63,12 @@ import { FooterComponent } from './components/portfolio/footer/footer.component'
     FooterComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
   ],
   providers: [
     DataService,
@@ -80,6 +79,7 @@ import { FooterComponent } from './components/portfolio/footer/footer.component'
     LocationsService,
     JobService,
     AuthService,
+
   ],
   bootstrap: [AppComponent],
 })

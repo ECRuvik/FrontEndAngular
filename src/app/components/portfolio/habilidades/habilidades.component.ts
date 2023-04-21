@@ -32,6 +32,7 @@ export class HabilidadesComponent implements OnInit {
   seeSkill(): void {
     this.skillServ.getAll().subscribe((data) => {
       this.skillData = data;
+      console.log(this.skillData);
     });
   }
 

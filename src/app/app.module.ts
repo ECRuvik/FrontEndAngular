@@ -79,7 +79,6 @@ import { BaseService } from './services/base.service';
     LocationsService,
     JobService,
     AuthService,
-
   ],
   bootstrap: [AppComponent],
 })

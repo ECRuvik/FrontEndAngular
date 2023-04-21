@@ -5,7 +5,7 @@
   <div class="exp_desc">
     <h3>{{ jobs.name }} | {{ jobs.position }}</h3>
     <h5>Desde: {{ jobs.startDate }} | Hasta: {{ jobs.endDate }}</h5>
-    <p>{{ jobs.about }}</p>
+    <p [innerHTML]="jobs.about"></p>
     <div class="box_crud" *ngIf="logged">
       <button class="edit-btn" (click)="edit(jobs)">
         <i class="fa-solid fa-pencil"></i>

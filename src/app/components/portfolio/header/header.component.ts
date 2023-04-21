@@ -22,6 +22,10 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getPerson();
+  }
+
+  getPerson(): void {
     this.personServ.getAll().subscribe((data) => {
       this.personData = data;
     });

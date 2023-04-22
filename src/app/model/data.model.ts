@@ -8,6 +8,7 @@ export class Data {
   about: string;
   resume: string;
   url_img: string;
+  logo_url: string;
 
   constructor(
     data_id: number,
@@ -18,7 +19,8 @@ export class Data {
     name: string,
     about: string,
     resume: string,
-    url_img: string
+    url_img: string,
+    logo_url: string
   ) {
     this.data_id = data_id;
     this.fullName = fullName;
@@ -29,5 +31,6 @@ export class Data {
     this.about = about;
     this.resume = resume;
     this.url_img = url_img;
+    this.logo_url = logo_url;
   }
 }

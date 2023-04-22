@@ -8,7 +8,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./add-acerca-de.component.css'],
 })
 export class AddAcercaDeComponent implements OnInit {
-  newPerson: Data = new Data(0, '', '', '', '', '', '', '', '');
+  newPerson: Data = new Data(0, '', '', '', '', '', '', '', '', '');
 
   @Output() onAddPerson: EventEmitter<Data> = new EventEmitter();
   @Output() closeAddBtn = new EventEmitter<boolean>();

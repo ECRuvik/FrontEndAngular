@@ -51,6 +51,16 @@
       />
     </div>
     <div class="input_container">
+      <label> URL logotipo </label>
+      <input
+        type="text"
+        [(ngModel)]="person.logo_url"
+        name="logo_url"
+        [placeholder]="person.logo_url"
+        required
+      />
+    </div>
+    <div class="input_container">
       <label> Descripción </label>
       <textarea
         [(ngModel)]="person.about"

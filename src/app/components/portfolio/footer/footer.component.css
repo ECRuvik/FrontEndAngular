@@ -17,9 +17,21 @@
 
 .item_box a {
   font-size: 20px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .item_box a:hover {
   color: #00ffff;
+}
+
+@media (max-width: 550px) {
+  #email_box {
+    display: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .link_text {
+    display: none;
+  }
 }

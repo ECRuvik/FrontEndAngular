@@ -2,7 +2,7 @@
 
 .container_profile {
   padding: 20px;
-  background-color: #0f0f0f;
+  background-color: #000;
   border-top: 1px solid #00ffff;
   border-bottom: 1px solid #00ffff;
 }
@@ -14,7 +14,7 @@
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  background-color: #0f0f0f;
+  background-color: #000;
 }
 
 .box_card_1 img {

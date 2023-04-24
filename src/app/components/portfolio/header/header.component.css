@@ -6,12 +6,12 @@
   margin: auto;
   display: flex;
   flex-flow: row wrap;
+  padding: 6px;
 }
 
 .top_left_header {
   width: 40%;
   margin: auto;
-  min-width: 350px;
 }
 
 .top_left_header h1 {
@@ -25,7 +25,6 @@
 .top_right_header {
   width: 20%;
   margin: auto;
-  min-width: 350px;
 }
 
 .top_right_header img {
@@ -35,7 +34,6 @@
 .bot_left_header {
   width: 50%;
   margin: auto;
-  min-width: 350px;
 }
 
 .bot_left_header p {
@@ -45,7 +43,6 @@
 .bot_right_header {
   width: 50%;
   margin: auto;
-  min-width: 350px;
   text-align: center;
 }
 

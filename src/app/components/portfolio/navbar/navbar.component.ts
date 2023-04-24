@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class NavbarComponent implements OnInit {
   logged = false;
   miPortfolio: any;
+  navShown: boolean = false;
 
   constructor(private auth: AuthService) {
     const authenticated = localStorage.getItem('loggedUser');
@@ -21,6 +22,22 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  toggleNav(): void {
+    const containerNav: any = document.getElementById('container_nav');
+    const containerNavToggle: any = document.getElementById('container_nav_toggle');
+    if (!this.navShown) {
+      containerNav.style.display = 'block';
+      containerNavToggle.style.flexDirection = 'row';
+      containerNavToggle.style.width = '120px';
+      this.navShown = true;
+    } else {
+      containerNav.style.display = 'none';
+      containerNavToggle.style.flexDirection = 'column';
+      containerNavToggle.style.width = '60px';
+      this.navShown = false;
+    }
+  }
 
   scrollTo(componentId: string): void {
     const element = document.getElementById(componentId);

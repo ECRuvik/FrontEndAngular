@@ -1,28 +1,36 @@
-<div class="container-nav">
-  <nav class="nav-main">
-    <img
-      src="../../../assets/img/Logo Argentina Programa.png"
-      alt="Argentina Programa Logo"
-      class="nav-brand"
-    />
-    <ul class="nav-menu">
-      <li>
-        <a (click)="scrollTo('acerca_de')">Acerca De</a>
-      </li>
-      <li>
-        <a (click)="scrollTo('estudios')">Estudios</a>
-      </li>
-      <li>
-        <a (click)="scrollTo('habilidades')">Habilidades</a>
-      </li>
-      <li>
-        <a (click)="scrollTo('experiencia_y_proyectos')">Experiencia</a>
-      </li>
-    </ul>
-    <ul class="nav-menu-right">
-      <i class="fa fa-user-circle" aria-hidden="true" id="user-icon"></i>
-      <a href="/login" *ngIf="!logged" id="miusuario">Iniciar Sesión</a>
-      <a href="/portfolio" *ngIf="logged" (click)="logout()">Cerrar Sesión</a>
-    </ul>
-  </nav>
+<div class="container_nav_toggle" id="container_nav_toggle">
+  <button (click)="toggleNav()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <a (click)="scrollTo('header')"
+    ><img src="../../../assets/img/Logo Argentina Programa.png"
+  /></a>
+  <div class="container_nav" id="container_nav">
+    <div class="menu_container">
+      <nav class="nav_menu">
+        <a (click)="scrollTo('acerca_de')">
+          <span><i class="fa-solid fa-address-card"></i> ACERCA DE</span>
+        </a>
+        <a (click)="scrollTo('estudios')">
+          <span><i class="fa-solid fa-book-bookmark"></i> ESTUDIOS</span>
+        </a>
+        <a (click)="scrollTo('habilidades')">
+          <span><i class="fa-solid fa-bolt"></i> HABILIDADES</span>
+        </a>
+        <a (click)="scrollTo('experiencia_y_proyectos')">
+          <span><i class="fa-solid fa-clipboard"></i> EXPERIENCIA</span>
+        </a>
+      </nav>
+    </div>
+    <div class="nav_log">
+      <ul class="nav_user">
+        <a href="/login" *ngIf="!logged" id="miusuario">
+          <i class="fa fa-user-circle" aria-hidden="true"></i> Iniciar Sesión</a
+        >
+        <a href="/portfolio" *ngIf="logged" (click)="logout()"
+          ><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a
+        >
+      </ul>
+    </div>
+  </div>
 </div>

@@ -5,7 +5,20 @@
       alt="Argentina Programa Logo"
       class="nav-brand"
     />
-    <ul class="nav-menu"></ul>
+    <ul class="nav-menu">
+      <li>
+        <a (click)="scrollTo('acerca_de')">Acerca De</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('estudios')">Estudios</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('habilidades')">Habilidades</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('experiencia_y_proyectos')">Experiencia</a>
+      </li>
+    </ul>
     <ul class="nav-menu-right">
       <i class="fa fa-user-circle" aria-hidden="true" id="user-icon"></i>
       <a href="/login" *ngIf="!logged" id="miusuario">Iniciar Sesión</a>

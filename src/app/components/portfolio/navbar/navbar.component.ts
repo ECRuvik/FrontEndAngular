@@ -22,6 +22,11 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  scrollTo(componentId: string): void {
+    const element = document.getElementById(componentId);
+    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   logout() {
     this.auth.logout();
   }

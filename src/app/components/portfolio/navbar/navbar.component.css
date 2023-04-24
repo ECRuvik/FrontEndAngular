@@ -28,6 +28,7 @@
 
 .nav-main ul li a {
   padding: 2px;
+  cursor: pointer;
 }
 
 .nav-main ul li a:hover {

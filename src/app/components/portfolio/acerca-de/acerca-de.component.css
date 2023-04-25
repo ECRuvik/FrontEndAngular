@@ -14,7 +14,7 @@
 .container_title h2::after {
   content: "";
   display: block;
-  width: 20%;
+  width: 14%;
   height: 1px;
   margin-top: 1rem;
   background-color: #00ffff;

@@ -22,6 +22,21 @@ ul {
   list-style: none;
 }
 
+/* Barra de desplazamiento */
+
+body::-webkit-scrollbar {
+  width: 14px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1c2929;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #00ffff;
+  border-radius: 20px;
+}
+
 /* Botones generales */
 
 .button {

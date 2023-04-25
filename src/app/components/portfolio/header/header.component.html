@@ -1,10 +1,14 @@
+<div class="loading_page" *ngIf="!logoLoaded">
+  <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+  <p>Cargando... Esto puede tomar hasta 5 minutos...</p>
+</div>
 <div class="header" id="header">
   <div class="top_left_header">
-    <h1>{{ personData[0].fullName }}</h1>
+    <h1 id="p_name">{{ personData[0].fullName }}</h1>
     <h2>{{ personData[0].position }}</h2>
   </div>
   <div class="top_right_header">
-    <img [src]="personData[0].logo_url" alt="" />
+    <img [src]="personData[0].logo_url" (load)="logoLoaded = true" alt="" />
   </div>
   <div class="bot_left_header">
     <p [innerHTML]="personData[0].resume"></p>

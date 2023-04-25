@@ -11,7 +11,7 @@
 }
 
 .container_edu {
-  flex: 1 0 calc(33.33% - 12px);
+  flex: 1 0 calc(50% - 12px);
   padding: 6px;
   display: flex;
   justify-content: center;
@@ -23,6 +23,7 @@
 
 .box_edu_1 {
   width: 20%;
+  max-width: 200px;
 }
 
 .box_edu_1 img {
@@ -37,22 +38,10 @@
   color: #90ffff;
 }
 
-@media only screen and (max-width: 1100px) {
-  .container_edu {
-    flex-basis: calc(50% - 12px);
-  }
-}
-
-@media (max-width: 740px) {
-  .container_edu {
-    width: 100%;
-    text-align: center;
-  }
-}
-
 @media only screen and (max-width: 650px) {
   .container_edu {
     flex-basis: 100%;
     flex-direction: column;
+    text-align: center;
   }
 }

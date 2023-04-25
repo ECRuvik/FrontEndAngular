@@ -1,10 +1,38 @@
 /* ACERCA DE */
 
+.container_title {
+  width: 100%;
+  padding: 40px 8px 8px 8px;
+  border-top: 1px solid #00ffff;
+  background-color: #000;
+}
+
+.container_title h2 {
+  color: #00ffff;
+}
+
+.container_title h2::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 1px;
+  margin-top: 1rem;
+  background-color: #00ffff;
+}
+
 .container_profile {
   padding: 20px;
   background-color: #000;
-  border-top: 1px solid #00ffff;
-  border-bottom: 1px solid #00ffff;
+}
+
+.container_profile::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 1px;
+  float: right;
+  margin-top: 1rem;
+  background-color: #00ffff;
 }
 
 .profile_card {

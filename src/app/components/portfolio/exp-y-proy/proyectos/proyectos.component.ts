@@ -28,9 +28,23 @@ export class ProyectosComponent implements OnInit {
     this.seeProyects();
   }
 
+  formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear().toString();
+
+    return `${day}/${month}/${year}`;
+  }
+
   seeProyects(): void {
     this.proyServ.getAll().subscribe((data) => {
-      this.proyectData = data;
+      this.proyectData = data.map((proyect) => ({
+        ...proyect,
+        startDate: this.formatDate(proyect.startDate),
+        endDate: this.formatDate(proyect.endDate),
+        year: new Date(proyect.startDate).getFullYear().toString(),
+      }));
     });
   }
 

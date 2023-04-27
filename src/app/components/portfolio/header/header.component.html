@@ -1,17 +1,13 @@
-<div class="loading_page" *ngIf="!logoLoaded">
-  <i class="fa-solid fa-spinner fa-spin-pulse"></i>
-  <p>Cargando... Esto puede tomar hasta 5 minutos...</p>
-</div>
-<div class="header" id="header">
+<div class="header" id="header" *ngFor="let person of personData">
   <div class="top_left_header">
-    <h1 id="p_name">{{ personData[0].fullName }}</h1>
-    <h2>{{ personData[0].position }}</h2>
+    <h1>{{ person.fullName }}</h1>
+    <h2>{{ person.position }}</h2>
   </div>
   <div class="top_right_header">
-    <img [src]="personData[0].logo_url" (load)="logoLoaded = true" alt="" />
+    <img [src]="person.logo_url" alt="" />
   </div>
   <div class="bot_left_header">
-    <p [innerHTML]="personData[0].resume"></p>
+    <p [innerHTML]="person.resume"></p>
   </div>
   <div class="bot_right_header">
     <a (click)="scrollTo('acerca_de')" class="btn btn-info">Saber más...</a>

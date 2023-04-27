@@ -1,20 +1,21 @@
 .container_form {
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  width: 100%;
-  background-color: #010101;
+  margin: -30px;
+  background-color: #000;
 }
 
 .form_box {
   position: relative;
-  width: 400px;
-  height: 450px;
+  width: 360px;
+  height: 400px;
   box-sizing: content-box;
   padding: 40px;
   background: transparent;
-  border: 2px solid rgba(46, 46, 46, 0.5);
+  border: 2px solid #2e2e2e80;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -22,15 +23,15 @@
 }
 
 h2 {
-  font-size: 2em;
   text-align: center;
+  font-size: 2em;
   color: #00ffff;
 }
 
 .input_box {
+  width: 100%;
   position: relative;
   margin: 30px 0;
-  width: 310px;
   border-bottom: 2px solid #252525;
 }
 
@@ -52,7 +53,7 @@ input:not(:placeholder-shown) ~ label {
 }
 
 .input_box input {
-  width: 100%;
+  width: 320px;
   height: 50px;
   background: transparent;
   color: #abffff;
@@ -70,10 +71,18 @@ input:not(:placeholder-shown) ~ label {
   top: 20px;
 }
 
-button {
+.button_box {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit_button {
   width: 100%;
   height: 40px;
-  border-radius: 40px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   background-color: #00ffff;
   border: none;
   outline: none;
@@ -83,7 +92,35 @@ button {
   transition: 0.2s;
 }
 
-button:hover {
+.submit_button:hover {
   background-color: #5effff;
   color: #202020;
+}
+
+.return {
+  width: 100%;
+  margin-top: 0px;
+  text-align: center;
+  font-size: 12px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: .2s;
+  font-weight: 600;
+  color: #000;
+  background-color: #ffabab;
+}
+
+.return:hover {
+  color: #202020;
+  background-color: #ff8484;
+}
+
+@media (max-width: 410px) {
+  .form_box {
+    width: 100%;
+  }
+
+  .input_box input {
+    width: 100%;
+  }
 }

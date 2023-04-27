@@ -1,10 +1,14 @@
+<div class="loading_page" *ngIf="!pageLoaded">
+  <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+  <p>Cargando... Esto puede tomar hasta 10 minutos...</p>
+</div>
 <div class="container_title" id="acerca_de">
   <h2>Sobre mí</h2>
 </div>
 <div class="container_profile">
   <div class="profile_card" *ngFor="let person of personData">
     <div class="box_card_1">
-      <img [src]="person.url_img" alt="Foto de Perfil" />
+      <img [src]="person.url_img" (onload)="pageLoaded = true" alt="Foto de Perfil" />
     </div>
     <div class="box_card_2">
       <h2>

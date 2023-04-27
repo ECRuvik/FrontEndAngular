@@ -1,7 +1,8 @@
 .container_footer {
   width: 100%;
   padding: 30px;
-  background-color: #0f0f0f;
+  border-top: 1px solid #00ffff;
+  background-color: #000;
 }
 
 .info_box {

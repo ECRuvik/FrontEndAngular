@@ -28,9 +28,23 @@ export class ExperienciaComponent implements OnInit {
     this.seeJobs();
   }
 
+  formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear().toString();
+
+    return `${day}/${month}/${year}`;
+  }
+
   seeJobs(): void {
     this.jobServ.getAll().subscribe((data) => {
-      this.jobsData = data;
+      this.jobsData = data.map((job) => ({
+        ...job,
+        startDate: this.formatDate(job.startDate),
+        endDate: this.formatDate(job.endDate),
+        year: new Date(job.startDate).getFullYear().toString(),
+      }));
     });
   }
 

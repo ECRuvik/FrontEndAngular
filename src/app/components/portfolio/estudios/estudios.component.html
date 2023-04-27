@@ -10,7 +10,7 @@
       <h4>
         {{ studies.name }} | {{ studies.institution }} | {{ studies.title }}
       </h4>
-      <h6>Desde: {{ studies.startDate }} | Hasta: {{ studies.endDate }}.</h6>
+      <h6>Desde: {{ studies.startDate }} | Hasta: {{ studies.endDate }}</h6>
       <p [innerHTML]="studies.about"></p>
     </div>
     <div class="box_crud" *ngIf="logged">

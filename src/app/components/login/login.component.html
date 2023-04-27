@@ -1,56 +1,59 @@
-<!-- Decidí hacer el LogIn en una dirección distinta debido a que en mi -->
+<!-- Decidí hacer el LogIn en una dirección distinta debido a que, en mi -->
 <!-- Experiencia, tener un LogIn de ésta manera, aparenta una mayor seguridad -->
 <!-- Desde el lado del cliente. -->
 <div class="container_form">
   <div class="form_box">
-    <div class="form_value">
-      <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
-        <h2>Iniciar Sesión</h2>
-        <div class="input_box">
-          <i class="fa-solid fa-user"></i>
-          <input
-            type="email"
-            formControlName="email"
-            id="email"
-            placeholder="`"
-            required
-          />
-          <label for="">Correo Electrónico</label>
-        </div>
-        <div *ngIf="Email?.errors && Email?.touched">
-          <p *ngIf="Email?.hasError('required')" class="text_danger">
-            Un Correo Electrónico es requerido.
-          </p>
-          <p *ngIf="Email?.hasError('email')" class="text_danger">
-            Este correo no es valido.
-          </p>
-        </div>
-        <div class="input_box">
-          <i class="fa-solid fa-lock"></i>
-          <input
-            type="password"
-            formControlName="password"
-            id="password"
-            placeholder="`"
-            required
-          />
-          <label for="">Contraseña</label>
-        </div>
-        <div *ngIf="Password?.errors && Password?.touched">
-          <p *ngIf="Password?.hasError('required')" class="text_danger">
-            Una contraseña es requerida.
-          </p>
-          <p *ngIf="Password?.errors?.['minlength']" class="text_danger">
-            La contraseña debe contener 8 o mas caracteres.
-          </p>
-          <p *ngIf="Password?.errors?.['maxlength']" class="text_danger">
-            La contraseña debe contener como máximo 60 caracteres.
-          </p>
-        </div>
-        <button type="submit">
+    <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+      <h2>Iniciar Sesión</h2>
+      <div class="input_box">
+        <i class="fa-solid fa-user"></i>
+        <input
+          type="email"
+          formControlName="email"
+          id="email"
+          placeholder="`"
+          required
+        />
+        <label for="">Correo Electrónico</label>
+      </div>
+      <div *ngIf="Email?.errors && Email?.touched">
+        <p *ngIf="Email?.hasError('required')" class="text_danger">
+          Un Correo Electrónico es requerido.
+        </p>
+        <p *ngIf="Email?.hasError('email')" class="text_danger">
+          Este correo no es valido.
+        </p>
+      </div>
+      <div class="input_box">
+        <i class="fa-solid fa-lock"></i>
+        <input
+          type="password"
+          formControlName="password"
+          id="password"
+          placeholder="`"
+          required
+        />
+        <label for="">Contraseña</label>
+      </div>
+      <div *ngIf="Password?.errors && Password?.touched">
+        <p *ngIf="Password?.hasError('required')" class="text_danger">
+          Una contraseña es requerida.
+        </p>
+        <p *ngIf="Password?.errors?.['minlength']" class="text_danger">
+          La contraseña debe contener 8 o mas caracteres.
+        </p>
+        <p *ngIf="Password?.errors?.['maxlength']" class="text_danger">
+          La contraseña debe contener como máximo 60 caracteres.
+        </p>
+      </div>
+      <div class="button_box">
+        <button type="submit" class="submit_button">
           Iniciar Sesión<i class="fa-solid fa-clipboard-list-check"></i>
         </button>
-      </form>
-    </div>
+        <a href="/portfolio" class="return"
+          ><i class="fa-sharp fa-solid fa-briefcase"></i> Volver</a
+        >
+      </div>
+    </form>
   </div>
 </div>

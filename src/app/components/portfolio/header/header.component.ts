@@ -11,7 +11,6 @@ import { DataService } from 'src/app/services/data.service';
 export class HeaderComponent implements OnInit {
   logged = false;
   personData: any;
-  logoLoaded = false;
 
   constructor(private personServ: DataService, private router: Router) {
     const authenticated = localStorage.getItem('loggedUser');

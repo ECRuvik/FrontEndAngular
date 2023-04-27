@@ -11,8 +11,9 @@ export class AcercaDeComponent implements OnInit {
   logged = false;
   personData: any;
   showAddBtn: boolean = false;
-  showEditBtn = false;
+  showEditBtn: boolean = false;
   selectedPerson: any;
+  pageLoaded = false;
 
   @Output() personEvent = new EventEmitter<Data>();
 

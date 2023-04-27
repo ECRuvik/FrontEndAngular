@@ -29,9 +29,23 @@ export class EstudiosComponent implements OnInit {
     this.seeStudies();
   }
 
+  formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear().toString();
+
+    return `${day}/${month}/${year}`;
+  }
+
   seeStudies(): void {
     this.studiesServ.getAll().subscribe((data) => {
-      this.studiesData = data;
+      this.studiesData = data.map((studies) => ({
+        ...studies,
+        startDate: this.formatDate(studies.startDate),
+        endDate: this.formatDate(studies.endDate),
+        year: new Date(studies.startDate).getFullYear().toString(),
+      }));
     });
   }
 

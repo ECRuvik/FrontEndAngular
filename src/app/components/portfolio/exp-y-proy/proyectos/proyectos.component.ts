@@ -30,7 +30,7 @@ export class ProyectosComponent implements OnInit {
 
   formatDate(dateString: string): string {
     const date = new Date(dateString);
-    const day = date.getDate().toString().padStart(2, '0');
+    const day = (date.getDate() + 1).toString().padStart(2, '0');
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const year = date.getFullYear().toString();
 
@@ -49,6 +49,8 @@ export class ProyectosComponent implements OnInit {
   }
 
   editProyect(proy: Proyect) {
+    proy.startDate = new Date(proy.startDate).toISOString();
+    proy.endDate = new Date(proy.endDate).toISOString();
     this.proyServ.update(proy.proyect_id, proy).subscribe((data) => {
       this.proyectData.push(data);
       this.seeProyects();

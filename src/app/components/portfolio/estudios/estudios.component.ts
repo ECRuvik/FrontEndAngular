@@ -31,7 +31,7 @@ export class EstudiosComponent implements OnInit {
 
   formatDate(dateString: string): string {
     const date = new Date(dateString);
-    const day = date.getDate().toString().padStart(2, '0');
+    const day = (date.getDate() + 1).toString().padStart(2, '0');
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const year = date.getFullYear().toString();
 
@@ -57,6 +57,8 @@ export class EstudiosComponent implements OnInit {
   }
 
   editStudy(study: Study) {
+    study.startDate = new Date(study.startDate).toISOString();
+    study.endDate = new Date(study.endDate).toISOString();
     this.studiesServ.update(study.study_id, study).subscribe((data) => {
       this.studiesData.push(data);
       this.seeStudies();

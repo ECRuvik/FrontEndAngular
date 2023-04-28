@@ -30,7 +30,7 @@ export class ExperienciaComponent implements OnInit {
 
   formatDate(dateString: string): string {
     const date = new Date(dateString);
-    const day = date.getDate().toString().padStart(2, '0');
+    const day = (date.getDate() + 1).toString().padStart(2, '0');
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const year = date.getFullYear().toString();
 
@@ -49,6 +49,8 @@ export class ExperienciaComponent implements OnInit {
   }
 
   editJob(job: Job) {
+    job.startDate = new Date(job.startDate).toISOString();
+    job.endDate = new Date(job.endDate).toISOString();
     this.jobServ.update(job.job_id, job).subscribe((data) => {
       this.jobsData.push(data);
       this.seeJobs();

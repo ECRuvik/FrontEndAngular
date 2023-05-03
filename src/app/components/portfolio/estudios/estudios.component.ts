@@ -45,6 +45,7 @@ export class EstudiosComponent implements OnInit {
         startDate: this.formatDate(studies.startDate),
         endDate: this.formatDate(studies.endDate),
         year: new Date(studies.startDate).getFullYear().toString(),
+        showFullText: false,
       }));
     });
   }

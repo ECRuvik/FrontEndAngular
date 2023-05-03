@@ -11,7 +11,17 @@
         {{ studies.name }} | {{ studies.institution }} | {{ studies.title }}
       </h4>
       <h6>Desde: {{ studies.startDate }} | Hasta: {{ studies.endDate }}</h6>
-      <p [innerHTML]="studies.about"></p>
+      <p
+        *ngIf="!studies.showFullText"
+        [innerHTML]="(studies.about | slice : 0 : 200) + '...'"
+      ></p>
+      <a *ngIf="!studies.showFullText" (click)="studies.showFullText = true"
+        ><i class="fa-solid fa-caret-down"></i
+      ></a>
+      <p *ngIf="studies.showFullText" [innerHTML]="studies.about"></p>
+      <a *ngIf="studies.showFullText" (click)="studies.showFullText = false"
+        ><i class="fa-solid fa-caret-down fa-rotate-180"></i
+      ></a>
     </div>
     <div class="box_crud" *ngIf="logged">
       <button class="edit-btn" (click)="edit(studies)">

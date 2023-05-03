@@ -1,12 +1,12 @@
 .box_exp {
   width: 100%;
   margin: 16px auto;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  background-color: #0f0f0f;
+  background-color: #000;
 }
 
 .exp_img {
@@ -20,7 +20,27 @@
 
 .exp_desc {
   width: 100%;
-  margin: 50px;
+  margin: 10px;
+}
+
+.exp_desc::before {
+  content: "";
+  display: block;
+  width: 58%;
+  height: 1px;
+  margin-bottom: 1rem;
+  margin-left: -20%;
+  background-color: #00ffff;
+}
+
+.exp_desc::after {
+  content: "";
+  display: block;
+  width: 46%;
+  height: 1px;
+  float: right;
+  margin-top: 1rem;
+  background-color: #00ffff;
 }
 
 .exp_desc h3 {
@@ -36,5 +56,6 @@
   .exp_img {
     flex-flow: row wrap;
     margin: auto;
+    text-align: center;
   }
 }

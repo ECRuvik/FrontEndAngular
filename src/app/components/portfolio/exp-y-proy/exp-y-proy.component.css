@@ -19,8 +19,9 @@
   padding: 10px;
   font-size: 32px;
   text-align: center;
+  border-bottom: 3px solid #00ffff;
+  background-color: #000;
   color: #00ffff;
-  background-color: #0f0f0f;
 }
 @media (max-width: 1060px) {
   .container_info {
